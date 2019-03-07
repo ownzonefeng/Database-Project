@@ -1,4 +1,4 @@
-# CS422-Project1
+# [CS422-Project1](https://github.com/CS-422/CS422-Project1)
 
 In this project you have to first implement three different data layouts and three different execution models. Subsequently, you have to execute queries testing different combinations of data layouts and execution models.
 
