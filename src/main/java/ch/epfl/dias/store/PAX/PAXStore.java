@@ -25,7 +25,6 @@ public class PAXStore extends Store {
 	private String class_delimiter;
 	private int tuplesPerPage;
 	private DBPAXpage[] orders;
-	private int subpages_No;
 
 	public PAXStore(DataType[] schema, String filename, String delimiter, int tuplesPerPage) {
 		// Implement
@@ -56,7 +55,6 @@ public class PAXStore extends Store {
 			}
 
 			int subpagesNo = single_page[0].length;
-			this.subpages_No = subpagesNo;
 			DBColumn[] subpages = new DBColumn[subpagesNo];
 
 			for(int j = 0; j < subpagesNo; j ++)

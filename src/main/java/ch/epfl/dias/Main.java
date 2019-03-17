@@ -10,8 +10,6 @@ import ch.epfl.dias.store.row.DBTuple;
 import ch.epfl.dias.store.row.RowStore;
 
 import java.io.IOException;
-import java.lang.reflect.Array;
-import java.util.Arrays;
 
 
 public class Main {
@@ -31,13 +29,13 @@ public class Main {
 		rowstore.load();
 		PAXStore paxstore = new PAXStore(orderSchema, "input/orders_small.csv", "\\|", 3);
 		paxstore.load();
-		 
-		// ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstore);
-		// DBTuple currentTuple = scan.next();
-		// while (!currentTuple.eof) {
-		// 	System.out.println(currentTuple.getFieldAsInt(1));
-		// 	currentTuple = scan.next();
-		// }
+
+		ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstore);
+		DBTuple currentTuple = scan.next();
+		while (!currentTuple.eof) {
+			System.out.println(currentTuple.getFieldAsInt(1));
+			currentTuple = scan.next();
+		}
 
 		ColumnStore columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
 		columnstoreData.load();
