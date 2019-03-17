@@ -1,16 +1,20 @@
 package ch.epfl.dias.store.column;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import ch.epfl.dias.store.DataType;
 
 public class DBColumn {
 
-	// TODO: Implement
+	// Implement
+	public int[] fields;
+	public DataType[] types;
+
+	public DBColumn(int[] fields, DataType[] types) {
+		this.fields = fields;
+		this.types = types;
+	}
 	
-	public Integer[] getAsInteger() {
-		// TODO: Implement
-		return null;
+	public int[] getAsInteger() {
+		// Implement
+		return this.fields;
 	}
 }

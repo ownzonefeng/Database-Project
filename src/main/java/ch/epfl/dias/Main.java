@@ -9,9 +9,14 @@ import ch.epfl.dias.store.column.DBColumn;
 import ch.epfl.dias.store.row.DBTuple;
 import ch.epfl.dias.store.row.RowStore;
 
+import java.io.IOException;
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
+
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 
 		DataType[] schema = new DataType[] { DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT,
 				DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT };
@@ -22,11 +27,10 @@ public class Main {
 		schema = new DataType[] { DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT,
 				DataType.INT, DataType.INT, DataType.INT, DataType.INT };
 
-		// RowStore rowstore = new RowStore(orderSchema, "input/orders_small.csv", "\\|");
-		// rowstore.load();
-
-		// PAXStore paxstore = new PAXStore(orderSchema, "input/orders_small.csv", "\\|", 3);
-		// paxstore.load();
+		RowStore rowstore = new RowStore(orderSchema, "input/orders_small.csv", "\\|");
+		rowstore.load();
+		PAXStore paxstore = new PAXStore(orderSchema, "input/orders_small.csv", "\\|", 3);
+		paxstore.load();
 		 
 		// ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstore);
 		// DBTuple currentTuple = scan.next();
@@ -35,8 +39,8 @@ public class Main {
 		// 	currentTuple = scan.next();
 		// }
 
-		// ColumnStore columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
-		// columnstoreData.load();
+		ColumnStore columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
+		columnstoreData.load();
 		//
 		// ch.epfl.dias.ops.block.Scan scan = new ch.epfl.dias.ops.block.Scan(columnstoreData);
 		// ch.epfl.dias.ops.block.Select sel = new ch.epfl.dias.ops.block.Select(scan, BinaryOp.EQ, 3, 6);
