@@ -38,28 +38,24 @@ public class ColumnStore extends Store {
 		// Implement
 
 		Path path = Paths.get(this.class_filename);
-		List contents = Files.readAllLines(path);
+		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
-		Object[] content = contents.toArray();
-		int length = content[0].toString().split(this.class_delimiter).length;
+		int length = contents.get(0).split(this.class_delimiter).length;
 		String[][] content_array = new String[size][length];
 		for(int i = 0; i < size; i ++)
 		{
-			String[] row = new String[length];
-			row = content[i].toString().split(this.class_delimiter);
-			for(int j = 0; j < length; j ++)
-			{
-				content_array[i][j] = row[j];
-			}
+			String[] row;
+			row = contents.get(i).split(this.class_delimiter);
+			System.arraycopy(row, 0, content_array[i], 0, length);
 		}
 
 		this.data = new DBColumn[length];
 		for(int j = 0; j < length; j ++)
 		{
-			int[] col = new int[size];
+			Object[] col = new Object[size];
 			for(int i = 0; i < size; i ++)
 			{
-				col[i] = Integer.parseInt(content_array[i][j]);
+				col[i] = content_array[i][j];
 			}
 			this.data[j] = new DBColumn(col, this.class_schema);
 		}

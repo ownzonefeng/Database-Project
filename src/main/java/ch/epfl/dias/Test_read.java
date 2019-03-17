@@ -21,10 +21,11 @@ public class Test_read {
         Path path = Paths.get("input/data.csv");
         try{
 
-            List contents = Files.readAllLines(path);
+            List<String> contents = Files.readAllLines(path);
             //Read from the stream
             Object[] data = contents.toArray();
-            System.out.println(data[0].toString().split(",").length);
+            int a = 8 % 3;
+            System.out.println(a);
 
 
 

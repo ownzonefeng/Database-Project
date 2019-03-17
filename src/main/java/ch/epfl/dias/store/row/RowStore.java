@@ -30,13 +30,12 @@ public class RowStore extends Store {
 	public void load() throws IOException {
 		// Implement
 		Path path = Paths.get(this.class_filename);
-		List contents = Files.readAllLines(path);
+		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
 		this.orders = new DBTuple[size];
-		Object[] content = contents.toArray();
 		for(int i = 0; i < size; i ++)
 		{
-			orders[i] = new DBTuple(content[i].toString().split(this.class_delimiter), this.class_schema);
+			orders[i] = new DBTuple(contents.get(i).split(this.class_delimiter), this.class_schema);
 		}
 
 	}
