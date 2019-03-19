@@ -29,6 +29,7 @@ public class Select implements VolcanoOperator {
 	public DBTuple next() {
 		// Implement
 		DBTuple current_tuple = class_VolOp.next();
+		if (current_tuple.eof) return current_tuple;
 		int fieldValue = current_tuple.getFieldAsInt(this.class_fieldNo);
 		switch (this.class_op) {
 			case LT:
@@ -50,9 +51,9 @@ public class Select implements VolcanoOperator {
 				if (fieldValue > this.class_value) return current_tuple;
 				break;
 			default:
-				return null;
+				return this.next();
 		}
-		return null;
+		return this.next();
 	}
 
 	@Override

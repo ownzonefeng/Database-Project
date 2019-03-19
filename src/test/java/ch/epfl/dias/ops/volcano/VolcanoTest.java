@@ -142,7 +142,8 @@ public class VolcanoTest {
 	    int output = result.getFieldAsInt(0);
 	    assertTrue(output == 3);
 	}
-	
+
+
 	@Test
 	public void joinTest2(){
 	    /* SELECT COUNT(*) FROM lineitem JOIN order ON (o_orderkey = orderkey) WHERE orderkey = 3;*/
@@ -163,4 +164,6 @@ public class VolcanoTest {
 	    int output = result.getFieldAsInt(0);
 	    assertTrue(output == 3);
 	}
+
+
 }

@@ -58,7 +58,7 @@ public class HashJoin implements VolcanoOperator {
 			System.arraycopy(tuple_right.types, 0, new_types, types_len_left, types_len_right);
 			return new DBTuple(new_fields, new_types);
 		}
-		return null;
+		return this.next();
 	}
 
 	@Override

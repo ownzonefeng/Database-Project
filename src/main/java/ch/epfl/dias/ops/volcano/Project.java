@@ -27,6 +27,7 @@ public class Project implements VolcanoOperator {
 	public DBTuple next() {
 		// Implement
 		DBTuple current_tuple = this.class_VolOp.next();
+        if (current_tuple.eof) return current_tuple;
 		Object[] new_fileds = new Object[this.class_fieldNo.length];
 		DataType[] new_schema = new DataType[this.class_fieldNo.length];
 		for (int i = 0; i < this.class_fieldNo.length; i++) {

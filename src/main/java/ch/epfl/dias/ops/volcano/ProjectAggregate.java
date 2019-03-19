@@ -44,7 +44,6 @@ public class ProjectAggregate implements VolcanoOperator {
 				count++;
 				current_tuple = this.class_VolOp.next();
 			}
-			value = count * count;
 		} else {
 			switch (this.class_agg) {
 				case AVG:
@@ -81,6 +80,7 @@ public class ProjectAggregate implements VolcanoOperator {
 		}
 		agg_value = value / count;
 		new_fields[0] = agg_value;
+		if (this.class_agg == Aggregate.COUNT) new_fields[0] = count;
 		DBTuple return_tuple = new DBTuple(new_fields, new_types);
 		return return_tuple;
 	}
