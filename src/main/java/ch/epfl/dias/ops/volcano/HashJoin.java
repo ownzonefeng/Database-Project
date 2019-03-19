@@ -63,6 +63,9 @@ public class HashJoin implements VolcanoOperator {
 
 	@Override
 	public void close() {
-		// TODO: Implement
+        // Implement
+        class_left.close();
+        class_right.close();
+        hash_table = null;
 	}
 }
