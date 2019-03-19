@@ -17,7 +17,11 @@ public class HashJoin implements VolcanoOperator {
 	private VolcanoOperator class_right;
 	private int class_leftNo;
 	private int class_rightNo;
-	private Map<Object, Object> hash_table = new HashMap<>();
+	private Map<Object, ArrayList<Integer>> hash_table = new HashMap<>();
+	private List<DBTuple> left_tuples = new ArrayList<>();
+	private DBTuple lag_right_tuple;
+	private boolean lag = false;
+	private int lag_idx = 0;
 
 	public HashJoin(VolcanoOperator leftChild, VolcanoOperator rightChild, int leftFieldNo, int rightFieldNo) {
 		// Implement
@@ -36,16 +40,44 @@ public class HashJoin implements VolcanoOperator {
 		for (int i = 0; i < Integer.MAX_VALUE; i++) {
 			DBTuple current_tuple = class_left.next();
 			if (current_tuple.eof) break;
-			hash_table.put(current_tuple.fields[class_leftNo], current_tuple);
+			left_tuples.add(current_tuple);
+			if (hash_table.containsKey(current_tuple.fields[class_leftNo])) {
+				ArrayList<Integer> old_idx = hash_table.get(current_tuple.fields[class_leftNo]);
+				old_idx.add(i);
+				hash_table.put(current_tuple.fields[class_rightNo], old_idx);
+			} else {
+				ArrayList<Integer> new_idx_list = new ArrayList<>();
+				new_idx_list.add(i);
+				hash_table.put(current_tuple.fields[class_leftNo], new_idx_list);
+			}
 		}
 	}
+
 
 	@Override
 	public DBTuple next() {
 		// Implement
-		DBTuple tuple_right = class_right.next();
-		if (!tuple_right.eof && hash_table.containsKey(tuple_right.fields[class_rightNo])) {
-			DBTuple tuple_left = (DBTuple) hash_table.get(tuple_right.fields[class_rightNo]);
+		DBTuple tuple_right;
+		if (!lag) {
+			tuple_right = class_right.next();
+			this.lag_right_tuple = tuple_right;
+		} else tuple_right = this.lag_right_tuple;
+
+		if (tuple_right.eof) return tuple_right;
+
+		if (hash_table.containsKey(tuple_right.fields[class_rightNo])) {
+			ArrayList<Integer> join_idx = hash_table.get(tuple_right.fields[class_rightNo]);
+			int idx;
+			if (join_idx.size() == lag_idx + 1) {
+				lag = false;
+				idx = join_idx.get(lag_idx);
+				lag_idx = 0;
+			} else {
+				lag = true;
+				idx = join_idx.get(lag_idx);
+				lag_idx++;
+			}
+			DBTuple tuple_left = this.left_tuples.get(idx);
 			int len_left = tuple_left.fields.length;
 			int len_right = tuple_right.fields.length;
 			int types_len_left = tuple_left.types.length;
@@ -67,5 +99,9 @@ public class HashJoin implements VolcanoOperator {
         class_left.close();
         class_right.close();
         hash_table = null;
+		lag = false;
+		lag_idx = 0;
+		left_tuples = new ArrayList<>();
+		hash_table = new HashMap<>();
 	}
 }

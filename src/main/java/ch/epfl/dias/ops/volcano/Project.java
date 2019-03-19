@@ -28,29 +28,29 @@ public class Project implements VolcanoOperator {
 		// Implement
 		DBTuple current_tuple = this.class_VolOp.next();
         if (current_tuple.eof) return current_tuple;
-		Object[] new_fileds = new Object[this.class_fieldNo.length];
+		Object[] new_fields = new Object[this.class_fieldNo.length];
 		DataType[] new_schema = new DataType[this.class_fieldNo.length];
 		for (int i = 0; i < this.class_fieldNo.length; i++) {
 			switch (current_tuple.types[this.class_fieldNo[i]]) {
 				case INT:
-					new_fileds[i] = current_tuple.getFieldAsInt(this.class_fieldNo[i]);
+					new_fields[i] = current_tuple.getFieldAsInt(this.class_fieldNo[i]);
 					new_schema[i] = DataType.INT;
 					break;
 				case DOUBLE:
-					new_fileds[i] = current_tuple.getFieldAsDouble(this.class_fieldNo[i]);
+					new_fields[i] = current_tuple.getFieldAsDouble(this.class_fieldNo[i]);
 					new_schema[i] = DataType.DOUBLE;
 					break;
 				case STRING:
-					new_fileds[i] = current_tuple.getFieldAsString(this.class_fieldNo[i]);
+					new_fields[i] = current_tuple.getFieldAsString(this.class_fieldNo[i]);
 					new_schema[i] = DataType.STRING;
 					break;
 				case BOOLEAN:
-					new_fileds[i] = current_tuple.getFieldAsBoolean(this.class_fieldNo[i]);
+					new_fields[i] = current_tuple.getFieldAsBoolean(this.class_fieldNo[i]);
 					new_schema[i] = DataType.BOOLEAN;
 					break;
 			}
 		}
-		DBTuple return_tuple = new DBTuple(new_fileds, new_schema);
+		DBTuple return_tuple = new DBTuple(new_fields, new_schema);
 		return return_tuple;
 	}
 
