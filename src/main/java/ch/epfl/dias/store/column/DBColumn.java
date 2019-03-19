@@ -9,10 +9,15 @@ public class DBColumn {
 	// Implement
 	public Object[] fields;
 	public DataType[] types;
+	public boolean eof = false;
 
 	public DBColumn(Object[] fields, DataType[] types) {
 		this.fields = fields;
 		this.types = types;
+	}
+
+	public DBColumn() {
+		this.eof = true;
 	}
 
 	public int[] getAsInteger() {

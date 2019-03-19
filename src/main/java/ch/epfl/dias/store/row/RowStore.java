@@ -32,12 +32,12 @@ public class RowStore extends Store {
 		Path path = Paths.get(this.class_filename);
 		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
-		this.orders = new DBTuple[size];
+		this.orders = new DBTuple[size + 1];
 		for(int i = 0; i < size; i ++)
 		{
 			orders[i] = new DBTuple(contents.get(i).split(this.class_delimiter), this.class_schema);
 		}
-
+		orders[size] = new DBTuple();
 	}
 
 	@Override
@@ -45,4 +45,5 @@ public class RowStore extends Store {
 		// Implement
 		return this.orders[rownumber];
 	}
+
 }

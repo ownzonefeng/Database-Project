@@ -9,15 +9,20 @@ import java.util.Arrays;
 public class DBPAXpage {
 
 	// Implement
-    private DBColumn[] fields;
-    private DataType[] types;
-    private int length;
+    public DBColumn[] fields;
+    public DataType[] types;
+    public int length;
+    public boolean eof = false;
 
     public DBPAXpage(DBColumn[] fields, DataType[] types)
     {
         this.fields = fields;
         this.types = types;
         this.length = this.fields.length;
+    }
+
+    public DBPAXpage() {
+        this.eof = true;
     }
 
     public DBTuple get_tuple(int offset_number)

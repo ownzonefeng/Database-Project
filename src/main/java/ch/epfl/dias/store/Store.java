@@ -35,7 +35,9 @@ public abstract class Store {
 	 *            (the set of columns to get)
 	 * @return
 	 */
-	public DBColumn[] getColumns(int[] columnsToGet) {
-		return null;
-	};
+    public DBColumn[] getColumns(int[] columnsToGet) {
+        return null;
+    }
+
+    ;
 }

@@ -25,6 +25,7 @@ public class PAXStore extends Store {
 	private String class_delimiter;
 	private int tuplesPerPage;
 	private DBPAXpage[] orders;
+	private int max_row;
 
 	public PAXStore(DataType[] schema, String filename, String delimiter, int tuplesPerPage) {
 		// Implement
@@ -40,6 +41,7 @@ public class PAXStore extends Store {
 		Path path = Paths.get(this.class_filename);
 		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
+		this.max_row = size;
 		int pagesNo = size / this.tuplesPerPage + 1;
 		orders = new DBPAXpage[pagesNo];
 		for(int i = 0; i < pagesNo; i ++)
@@ -76,6 +78,7 @@ public class PAXStore extends Store {
 	@Override
 	public DBTuple getRow(int rownumber) {
 		// Implement
+		if (rownumber >= this.max_row) return new DBTuple();
 		int get_page_no = rownumber / this.tuplesPerPage;
 		int get_offset = rownumber % this.tuplesPerPage;
 		DBPAXpage page = this.orders[get_page_no];

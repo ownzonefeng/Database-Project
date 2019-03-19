@@ -39,12 +39,13 @@ public class Main {
 
 		ColumnStore columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
 		columnstoreData.load();
-		//
-		// ch.epfl.dias.ops.block.Scan scan = new ch.epfl.dias.ops.block.Scan(columnstoreData);
-		// ch.epfl.dias.ops.block.Select sel = new ch.epfl.dias.ops.block.Select(scan, BinaryOp.EQ, 3, 6);
-		// ch.epfl.dias.ops.block.ProjectAggregate agg = new ch.epfl.dias.ops.block.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
-		// DBColumn[] result = agg.execute();
-		// int output = result[0].getAsInteger()[0];
-		// System.out.println(output);
+		/*
+		ch.epfl.dias.ops.columnar.Scan scan = new ch.epfl.dias.ops.columnar.Scan(columnstoreData);
+		ch.epfl.dias.ops.columnar.Select sel = new ch.epfl.dias.ops.columnar.Select(scan, BinaryOp.EQ, 3, 6);
+		ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
+		DBColumn[] result = agg.execute();
+		int output = result[0].getAsInteger()[0];
+		System.out.println(output);
+		*/
 	}
 }
