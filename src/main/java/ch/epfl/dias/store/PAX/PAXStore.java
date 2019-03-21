@@ -66,7 +66,7 @@ public class PAXStore extends Store {
 				{
 					col_in_subpage[k] = single_page[k][j];
 				}
-				DBColumn subpage = new DBColumn(col_in_subpage, new DataType[] {this.class_schema[j]});
+                DBColumn subpage = new DBColumn(col_in_subpage, this.class_schema[j]);
 				subpages[j] = subpage;
 			}
 

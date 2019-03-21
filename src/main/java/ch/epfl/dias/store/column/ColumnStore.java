@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.List;
 
 import ch.epfl.dias.store.DataType;
@@ -15,11 +16,12 @@ import ch.epfl.dias.store.Store;
 public class ColumnStore extends Store {
 
 	// Add required structures
-	private DataType[] class_schema;
+    public DataType[] class_schema;
 	private String class_filename;
 	private String class_delimiter;
-	private Boolean class_lateMaterialization;
-	private DBColumn[] data;
+    public Boolean class_lateMaterialization;
+    public DBColumn[] data;
+
 
 	public ColumnStore(DataType[] schema, String filename, String delimiter) {
 		this(schema, filename, delimiter, false);
@@ -53,11 +55,13 @@ public class ColumnStore extends Store {
 		for(int j = 0; j < length; j ++)
 		{
 			Object[] col = new Object[size];
+            ArrayList<Integer> tid = new ArrayList<>();
 			for(int i = 0; i < size; i ++)
 			{
 				col[i] = content_array[i][j];
+                tid.add(i);
 			}
-			this.data[j] = new DBColumn(col, this.class_schema);
+            this.data[j] = new DBColumn(col, this.class_schema[j], tid, this.class_lateMaterialization);
 		}
 	}
 

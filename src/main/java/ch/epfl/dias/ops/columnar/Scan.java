@@ -5,15 +5,17 @@ import ch.epfl.dias.store.column.DBColumn;
 
 public class Scan implements ColumnarOperator {
 
-	// TODO: Add required structures
+	// Add required structures
+	private ColumnStore class_store;
 
 	public Scan(ColumnStore store) {
-		// TODO: Implement
+		// Implement
+		class_store = store;
 	}
 
 	@Override
 	public DBColumn[] execute() {
-		// TODO: Implement
-		return null;
+		// Implement
+		return class_store.data;
 	}
 }
