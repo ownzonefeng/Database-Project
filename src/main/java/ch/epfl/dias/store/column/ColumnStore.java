@@ -68,6 +68,7 @@ public class ColumnStore extends Store {
 	@Override
 	public DBColumn[] getColumns(int[] columnsToGet) {
 		// Implement
+		if (columnsToGet.length == 0) return this.data;
 		int size = columnsToGet.length;
 		DBColumn[] get_columns = new DBColumn[size];
 		for(int i = 0; i < size; i ++)
@@ -75,5 +76,8 @@ public class ColumnStore extends Store {
 			get_columns[i] = this.data[columnsToGet[i]];
 		}
 		return get_columns;
+
+
 	}
+
 }

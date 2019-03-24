@@ -58,8 +58,8 @@ public class VectorTest {
 		columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_small.csv", "\\|");
 		columnstoreLineItem.load();
 
-		columnstoreEmpty = new ColumnStore(schema, "input/empty.csv", ",");
-		columnstoreEmpty.load();
+		//columnstoreEmpty = new ColumnStore(schema, "input/empty.csv", ",");
+		//columnstoreEmpty.load();
 	}
 
 	@Test
