@@ -39,6 +39,7 @@ public class DBColumn {
 		return fields_double;
 	}
 
+
 	public Object getAsObject(int fieldNo)
 	{
 		return this.fields[fieldNo];
