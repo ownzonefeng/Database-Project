@@ -5,13 +5,12 @@ import ch.epfl.dias.ops.BinaryOp;
 import ch.epfl.dias.store.DataType;
 import ch.epfl.dias.store.column.ColumnStore;
 import ch.epfl.dias.store.column.DBColumn;
-
-import static org.junit.Assert.assertTrue;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.io.IOException;
 
-import org.junit.Before;
-import org.junit.Test;
+import static org.junit.Assert.assertTrue;
 
 public class ColumnarTest {
 
@@ -39,10 +38,10 @@ public class ColumnarTest {
         columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
         columnstoreData.load();
 
-        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_test.csv", "\\|");
+        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_test.csv", "\\|", false);
         columnstoreOrder.load();
 
-        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_test.csv", "\\|");
+        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_test.csv", "\\|", false);
         columnstoreLineItem.load();
     }
 

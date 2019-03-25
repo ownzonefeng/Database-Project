@@ -1,11 +1,8 @@
 package ch.epfl.dias;
 
-import ch.epfl.dias.ops.Aggregate;
-import ch.epfl.dias.ops.BinaryOp;
 import ch.epfl.dias.store.DataType;
 import ch.epfl.dias.store.PAX.PAXStore;
 import ch.epfl.dias.store.column.ColumnStore;
-import ch.epfl.dias.store.column.DBColumn;
 import ch.epfl.dias.store.row.DBTuple;
 import ch.epfl.dias.store.row.RowStore;
 
@@ -25,9 +22,9 @@ public class Main {
 		schema = new DataType[] { DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT, DataType.INT,
 				DataType.INT, DataType.INT, DataType.INT, DataType.INT };
 
-		RowStore rowstore = new RowStore(orderSchema, "input/orders_small.csv", "\\|");
+		RowStore rowstore = new RowStore(orderSchema, "input/orders_test.csv", "\\|");
 		rowstore.load();
-		PAXStore paxstore = new PAXStore(orderSchema, "input/orders_small.csv", "\\|", 3);
+		PAXStore paxstore = new PAXStore(orderSchema, "input/orders_test.csv", "\\|", 3);
 		paxstore.load();
 
 		ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstore);

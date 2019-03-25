@@ -1,12 +1,12 @@
 package ch.epfl.dias.ops.vector;
 
-import ch.epfl.dias.ops.BinaryOp;
 import ch.epfl.dias.store.DataType;
 import ch.epfl.dias.store.column.DBColumn;
-import ch.epfl.dias.store.row.DBTuple;
 
-import java.util.*;
-import java.util.stream.Stream;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Join implements VectorOperator {
 
@@ -41,7 +41,7 @@ public class Join implements VectorOperator {
 		while (col_left != null) {
 			left_vectors.add(col_left);
 			for (Object value : col_left[class_leftNo].fields) {
-				if (hash_table.containsKey(value)) {
+				if (!hash_table.containsKey(value)) {
 					ArrayList<Integer> tids = new ArrayList<>();
 					tids.add(i);
 					i++;
