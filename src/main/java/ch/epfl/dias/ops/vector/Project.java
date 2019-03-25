@@ -27,7 +27,12 @@ public class Project implements VectorOperator {
 	@Override
 	public DBColumn[] next() {
         // Implement
-        DBColumn[] cols_to_select = class_vec_op.next();
+        DBColumn[] cols_to_select;
+        while (true) {
+            cols_to_select = class_vec_op.next();
+            if (cols_to_select != null) break;
+        }
+        if (cols_to_select[0].eof) return cols_to_select;
         DBColumn[] return_cols = new DBColumn[class_fieldNo.length];
         for (int i = 0; i < class_fieldNo.length; i++) {
             return_cols[i] = cols_to_select[class_fieldNo[i]];

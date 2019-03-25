@@ -41,6 +41,7 @@ public class PAXStore extends Store {
 		Path path = Paths.get(this.class_filename);
 		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
+        if (size == 0) throw new RuntimeException("Empty file");
 		this.max_row = size;
 		int pagesNo = size / this.tuplesPerPage + 1;
 		if (size % this.tuplesPerPage == 0) pagesNo = pagesNo - 1;

@@ -35,7 +35,7 @@ public class Scan implements VectorOperator {
 	@Override
 	public DBColumn[] next() {
 		// Implement
-		if (current_tid >= col_length) return null;
+		if (current_tid >= col_length) return new DBColumn[]{new DBColumn()};
 		int current_vec_size = min(col_length - current_tid, class_vec_size);
 		DBColumn[] return_columns = new DBColumn[tuple_length];
 		int i = 0;

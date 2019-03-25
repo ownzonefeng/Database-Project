@@ -6,7 +6,10 @@ import ch.epfl.dias.store.DataType;
 import ch.epfl.dias.store.column.ColumnStore;
 import ch.epfl.dias.store.column.DBColumn;
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import ch.epfl.dias.ops.columnar.*;
+import org.junit.rules.Timeout;
 
 import java.io.IOException;
 
@@ -21,6 +24,9 @@ public class ColumnarTest {
     ColumnStore columnstoreData;
     ColumnStore columnstoreOrder;
     ColumnStore columnstoreLineItem;
+
+    @Rule
+    public Timeout globalTimeout = Timeout.seconds(60);
 
     @Before
     public void init() throws IOException {
@@ -38,110 +44,62 @@ public class ColumnarTest {
         columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
         columnstoreData.load();
 
-        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_test.csv", "\\|", false);
+        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_big.csv", "\\|", false);
         columnstoreOrder.load();
 
-        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_test.csv", "\\|", false);
+        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_big.csv", "\\|", false);
         columnstoreLineItem.load();
     }
 
     @Test
-    public void spTestData() {
-        /* SELECT COUNT(*) FROM data WHERE col4 == 6 */
-        ch.epfl.dias.ops.columnar.Scan scan = new ch.epfl.dias.ops.columnar.Scan(columnstoreData);
-        ch.epfl.dias.ops.columnar.Select sel = new ch.epfl.dias.ops.columnar.Select(scan, BinaryOp.EQ, 3, 6);
-        ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(sel, Aggregate.COUNT,
-                DataType.INT, 2);
+    public void testQuery1() {
 
+        Scan scan = new Scan(columnstoreLineItem);
+        Select sel = new Select(scan, BinaryOp.LE, 0, 100);
+        Project prj = new Project(sel, new int[]{0, 1, 2});
+        ProjectAggregate agg = new ProjectAggregate(prj, Aggregate.COUNT, DataType.INT, 2);
+
+        agg.execute();
         DBColumn[] result = agg.execute();
 
         // This query should return only one result
         int output = result[0].getAsInteger()[0];
 
-        assertTrue(output == 3);
+        assertTrue(output == 110);
     }
 
     @Test
-    public void spTestOrder() {
-        /* SELECT COUNT(*) FROM data WHERE col0 == 6 */
-        ch.epfl.dias.ops.columnar.Scan scan = new ch.epfl.dias.ops.columnar.Scan(columnstoreOrder);
-        ch.epfl.dias.ops.columnar.Select sel = new ch.epfl.dias.ops.columnar.Select(scan, BinaryOp.EQ, 0, 6);
-        ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(sel, Aggregate.COUNT,
-                DataType.INT, 2);
+    public void testQuery2() {
+        Scan scan_L = new Scan(columnstoreLineItem);
+        Scan scan_O = new Scan(columnstoreOrder);
+        Select sel_O = new Select(scan_O, BinaryOp.LE, 0, 150);
+        Join join = new Join(scan_L, sel_O, 0, 0);
+        Project prj = new Project(join, new int[]{7, 19});
+        ProjectAggregate agg = new ProjectAggregate(prj, Aggregate.COUNT, DataType.INT, 1);
 
-        DBColumn[] result = agg.execute();
+
 
         // This query should return only one result
+        DBColumn[] result = agg.execute();
         int output = result[0].getAsInteger()[0];
+        System.out.println(output);
+        assertTrue(output == 157);
 
-        assertTrue(output == 1);
     }
 
     @Test
-    public void spTestLineItem() {
-        /* SELECT COUNT(*) FROM data WHERE col0 == 3 */
-        ch.epfl.dias.ops.columnar.Scan scan = new ch.epfl.dias.ops.columnar.Scan(columnstoreLineItem);
-        ch.epfl.dias.ops.columnar.Select sel = new ch.epfl.dias.ops.columnar.Select(scan, BinaryOp.EQ, 0, 3);
-        ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(sel, Aggregate.COUNT,
-                DataType.INT, 2);
+    public void testQuery3() {
+        Scan scan_L = new Scan(columnstoreLineItem);
+        Scan scan_O = new Scan(columnstoreOrder);
+        Select sel_O = new Select(scan_O, BinaryOp.LE, 0, 80);
+        Join join = new Join(scan_L, sel_O, 0, 0);
+        Project prj = new Project(join, new int[]{7, 19});
+        ProjectAggregate agg = new ProjectAggregate(join, Aggregate.SUM, DataType.INT, 0);
 
         DBColumn[] result = agg.execute();
+        double output = result[0].getAsDouble()[0];
+        System.out.println(output);
+        assertTrue(true);
 
-        // This query should return only one result
-        int output = result[0].getAsInteger()[0];
-
-        assertTrue(output == 6);
-    }
-
-    @Test
-    public void joinTest1() {
-        /*
-         * SELECT COUNT(*) FROM order JOIN lineitem ON (o_orderkey = orderkey)
-         * WHERE orderkey = 3;
-         */
-
-        ch.epfl.dias.ops.columnar.Scan scanOrder = new ch.epfl.dias.ops.columnar.Scan(columnstoreOrder);
-        ch.epfl.dias.ops.columnar.Scan scanLineitem = new ch.epfl.dias.ops.columnar.Scan(columnstoreLineItem);
-
-        /* Filtering on both sides */
-        ch.epfl.dias.ops.columnar.Select selOrder = new ch.epfl.dias.ops.columnar.Select(scanOrder, BinaryOp.EQ, 0, 3);
-        ch.epfl.dias.ops.columnar.Select selLineitem = new ch.epfl.dias.ops.columnar.Select(scanLineitem, BinaryOp.EQ, 0, 3);
-
-        ch.epfl.dias.ops.columnar.Join join = new ch.epfl.dias.ops.columnar.Join(selOrder, selLineitem, 0, 0);
-        ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(join, Aggregate.COUNT,
-                DataType.INT, 0);
-
-        DBColumn[] result = agg.execute();
-
-        // This query should return only one result
-        int output = result[0].getAsInteger()[0];
-
-        assertTrue(output == 6);
-    }
-
-    @Test
-    public void joinTest2() {
-        /*
-         * SELECT COUNT(*) FROM lineitem JOIN order ON (o_orderkey = orderkey)
-         * WHERE orderkey = 3;
-         */
-
-        ch.epfl.dias.ops.columnar.Scan scanOrder = new ch.epfl.dias.ops.columnar.Scan(columnstoreOrder);
-        ch.epfl.dias.ops.columnar.Scan scanLineitem = new ch.epfl.dias.ops.columnar.Scan(columnstoreLineItem);
-
-        /* Filtering on both sides */
-        ch.epfl.dias.ops.columnar.Select selOrder = new ch.epfl.dias.ops.columnar.Select(scanOrder, BinaryOp.EQ, 0, 3);
-        ch.epfl.dias.ops.columnar.Select selLineitem = new ch.epfl.dias.ops.columnar.Select(scanLineitem, BinaryOp.EQ, 0, 3);
-
-        ch.epfl.dias.ops.columnar.Join join = new ch.epfl.dias.ops.columnar.Join(selLineitem, selOrder, 0, 0);
-        ch.epfl.dias.ops.columnar.ProjectAggregate agg = new ch.epfl.dias.ops.columnar.ProjectAggregate(join, Aggregate.COUNT,
-                DataType.INT, 0);
-
-        DBColumn[] result = agg.execute();
-
-        // This query should return only one result
-        int output = result[0].getAsInteger()[0];
-
-        assertTrue(output == 6);
     }
 }

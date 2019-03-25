@@ -42,6 +42,7 @@ public class ColumnStore extends Store {
 		Path path = Paths.get(this.class_filename);
 		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
+        if (size == 0) throw new RuntimeException("Empty file");
 		int length = contents.get(0).split(this.class_delimiter).length;
 		String[][] content_array = new String[size][length];
 		for(int i = 0; i < size; i ++)

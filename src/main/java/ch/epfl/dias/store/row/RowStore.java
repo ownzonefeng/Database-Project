@@ -32,6 +32,7 @@ public class RowStore extends Store {
 		Path path = Paths.get(this.class_filename);
 		List<String> contents = Files.readAllLines(path);
 		int size = contents.size();
+        if (size == 0) throw new RuntimeException("Empty file");
 		this.orders = new DBTuple[size + 1];
 		for(int i = 0; i < size; i ++)
 		{

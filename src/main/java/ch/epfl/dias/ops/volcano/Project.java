@@ -26,7 +26,11 @@ public class Project implements VolcanoOperator {
 	@Override
 	public DBTuple next() {
 		// Implement
-		DBTuple current_tuple = this.class_VolOp.next();
+        DBTuple current_tuple;
+        while (true) {
+            current_tuple = this.class_VolOp.next();
+            if (current_tuple != null) break;
+        }
         if (current_tuple.eof) return current_tuple;
 		Object[] new_fields = new Object[this.class_fieldNo.length];
 		DataType[] new_schema = new DataType[this.class_fieldNo.length];

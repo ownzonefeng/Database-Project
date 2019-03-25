@@ -31,7 +31,7 @@ public class Select implements VectorOperator {
 	public DBColumn[] next() {
 		// Implement
 		DBColumn[] cols_to_select = class_vec_op.next();
-		if (cols_to_select == null) return null;
+		if (cols_to_select[0].eof) return cols_to_select;
 		int col_length = cols_to_select[0].tid.size();
 		ArrayList<Integer> new_tids = new ArrayList<>();
 		switch (class_op) {
@@ -66,7 +66,7 @@ public class Select implements VectorOperator {
 				}
 				break;
 		}
-		if (new_tids.size() == 0) return this.next();
+		if (new_tids.size() == 0) return null;
 
 
 		DBColumn[] return_columns = new DBColumn[cols_to_select.length];

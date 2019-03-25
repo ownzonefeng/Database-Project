@@ -6,15 +6,15 @@ import java.io.IOException;
 
 import ch.epfl.dias.ops.Aggregate;
 import ch.epfl.dias.ops.BinaryOp;
-import ch.epfl.dias.ops.volcano.HashJoin;
-import ch.epfl.dias.ops.volcano.ProjectAggregate;
-import ch.epfl.dias.ops.volcano.Select;
+import ch.epfl.dias.ops.volcano.*;
 import ch.epfl.dias.store.DataType;
 import ch.epfl.dias.store.row.DBTuple;
 import ch.epfl.dias.store.row.RowStore;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class VolcanoTestNSM {
 
@@ -25,6 +25,9 @@ public class VolcanoTestNSM {
     RowStore rowstoreData;
     RowStore rowstoreOrder;
     RowStore rowstoreLineItem;
+
+    @Rule
+    public Timeout globalTimeout = Timeout.seconds(60);
 
     @Before
     public void init() throws IOException {
@@ -73,99 +76,65 @@ public class VolcanoTestNSM {
         rowstoreData = new RowStore(schema, "input/data.csv", ",");
         rowstoreData.load();
 
-        rowstoreOrder = new RowStore(orderSchema, "input/orders_test.csv", "\\|");
+        rowstoreOrder = new RowStore(orderSchema, "input/orders_big.csv", "\\|");
         rowstoreOrder.load();
 
-        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_test.csv", "\\|");
+        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
         rowstoreLineItem.load();
     }
 
     @Test
-    public void spTestData() {
-        /* SELECT COUNT(*) FROM data WHERE col4 == 6 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreData);
-        ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 3, 6);
-        ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
+    public void testQuery1() {
+        Scan scan = new Scan(rowstoreLineItem);
+        Select sel = new Select(scan, BinaryOp.LE, 0, 100);
+        Project prj = new Project(sel, new int[]{0, 1, 2});
+        ProjectAggregate agg = new ProjectAggregate(prj, Aggregate.COUNT, DataType.INT, 2);
 
         agg.open();
 
         // This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 110);
+
     }
 
     @Test
-    public void spTestOrder() {
-        /* SELECT COUNT(*) FROM data WHERE col0 == 6 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
-        ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 0, 6);
-        ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
+    public void testQuery2() {
+        Scan scan_L = new Scan(rowstoreLineItem);
+        Scan scan_O = new Scan(rowstoreOrder);
+        Select sel_O = new Select(scan_O, BinaryOp.LE, 0, 150);
+        HashJoin join = new HashJoin(scan_L, sel_O, 0, 0);
+        Project prj = new Project(join, new int[]{7, 19});
+        ProjectAggregate agg = new ProjectAggregate(prj, Aggregate.COUNT, DataType.INT, 1);
 
         agg.open();
 
         // This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 1);
+        System.out.println(output);
+        assertTrue(output == 157);
+
     }
 
     @Test
-    public void spTestLineItem() {
-        /* SELECT COUNT(*) FROM data WHERE col0 == 3 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
-        ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 0, 3);
-        ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
+    public void testQuery3() {
+        Scan scan_L = new Scan(rowstoreLineItem);
+        Scan scan_O = new Scan(rowstoreOrder);
+        Select sel_O = new Select(scan_O, BinaryOp.LE, 0, 80);
+        HashJoin join = new HashJoin(scan_L, sel_O, 0, 0);
+        Project prj = new Project(join, new int[]{7, 19});
+        ProjectAggregate agg = new ProjectAggregate(join, Aggregate.SUM, DataType.INT, 0);
 
         agg.open();
 
         // This query should return only one result
         DBTuple result = agg.next();
-        int output = result.getFieldAsInt(0);
-        assertTrue(output == 6);
-    }
+        double output = result.getFieldAsDouble(0);
+        System.out.println(output);
+        assertTrue(true);
 
-    @Test
-    public void joinTest1() {
-        /* SELECT COUNT(*) FROM order JOIN lineitem ON (o_orderkey = orderkey) WHERE orderkey = 3;*/
-
-        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
-        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
-
-        /*Filtering on both sides */
-        Select selOrder = new Select(scanOrder, BinaryOp.EQ, 0, 3);
-        Select selLineitem = new Select(scanLineitem, BinaryOp.EQ, 0, 3);
-
-        HashJoin join = new HashJoin(selOrder, selLineitem, 0, 0);
-        ProjectAggregate agg = new ProjectAggregate(join, Aggregate.COUNT, DataType.INT, 0);
-
-        agg.open();
-        //This query should return only one result
-        DBTuple result = agg.next();
-        int output = result.getFieldAsInt(0);
-        assertTrue(output == 6);
-    }
-
-
-    @Test
-    public void joinTest2() {
-        /* SELECT COUNT(*) FROM lineitem JOIN order ON (o_orderkey = orderkey) WHERE orderkey = 3;*/
-
-        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
-        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
-
-        /*Filtering on both sides */
-        Select selOrder = new Select(scanOrder, BinaryOp.EQ, 0, 3);
-        Select selLineitem = new Select(scanLineitem, BinaryOp.EQ, 0, 3);
-
-        HashJoin join = new HashJoin(selLineitem, selOrder, 0, 0);
-        ProjectAggregate agg = new ProjectAggregate(join, Aggregate.COUNT, DataType.INT, 0);
-
-        agg.open();
-        //This query should return only one result
-        DBTuple result = agg.next();
-        int output = result.getFieldAsInt(0);
-        assertTrue(output == 6);
     }
 
 

@@ -37,45 +37,65 @@ public class ProjectAggregate implements VectorOperator {
 	@Override
 	public DBColumn[] next() {
 		// Implement
-		DBColumn[] cols_to_select = class_vec_op.next();
+		DBColumn[] cols_to_select;
+		while (true) {
+			cols_to_select = class_vec_op.next();
+			if (cols_to_select != null) break;
+		}
+		if (cols_to_select[0].eof) throw new RuntimeException("Empty agg");
 		DataType new_dt = cols_to_select[class_fieldNo].types;
 		int count = 0;
 		double value = 0;
 		switch (class_agg) {
 			case COUNT:
-				while (cols_to_select != null) {
+				while (!cols_to_select[0].eof) {
 					count = count + cols_to_select[class_fieldNo].fields.length;
-					cols_to_select = class_vec_op.next();
+					while (true) {
+						cols_to_select = class_vec_op.next();
+						if (cols_to_select != null) break;
+					}
 				}
 				break;
 			case AVG:
-				while (cols_to_select != null) {
+				while (!cols_to_select[0].eof) {
 					count = count + cols_to_select[class_fieldNo].fields.length;
 					value = value + DoubleStream.of(cols_to_select[class_fieldNo].getAsDouble()).sum();
-					cols_to_select = class_vec_op.next();
+					while (true) {
+						cols_to_select = class_vec_op.next();
+						if (cols_to_select != null) break;
+					}
 				}
 				value = value / count;
 				break;
 			case MAX:
 				value = Double.MIN_VALUE;
-				while (cols_to_select != null) {
+				while (!cols_to_select[0].eof) {
 					double current_max = DoubleStream.of(cols_to_select[class_fieldNo].getAsDouble()).max().orElse(Double.MIN_VALUE);
 					value = max(value, current_max);
-					cols_to_select = class_vec_op.next();
+					while (true) {
+						cols_to_select = class_vec_op.next();
+						if (cols_to_select != null) break;
+					}
 				}
 				break;
 			case MIN:
 				value = Double.MAX_VALUE;
-				while (cols_to_select != null) {
+				while (!cols_to_select[0].eof) {
 					double current_min = DoubleStream.of(cols_to_select[class_fieldNo].getAsDouble()).min().orElse(Double.MAX_VALUE);
 					value = min(value, current_min);
-					cols_to_select = class_vec_op.next();
+					while (true) {
+						cols_to_select = class_vec_op.next();
+						if (cols_to_select != null) break;
+					}
 				}
 				break;
 			case SUM:
-				while (cols_to_select != null) {
+				while (!cols_to_select[0].eof) {
 					value = value + DoubleStream.of(cols_to_select[class_fieldNo].getAsDouble()).sum();
-					cols_to_select = class_vec_op.next();
+					while (true) {
+						cols_to_select = class_vec_op.next();
+						if (cols_to_select != null) break;
+					}
 				}
 				break;
 		}

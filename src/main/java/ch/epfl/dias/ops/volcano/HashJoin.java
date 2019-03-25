@@ -38,7 +38,11 @@ public class HashJoin implements VolcanoOperator {
         class_left.open();
         class_right.open();
         for (int i = 0; i < Integer.MAX_VALUE; i++) {
-            DBTuple current_tuple = class_left.next();
+            DBTuple current_tuple;
+            while (true) {
+                current_tuple = class_left.next();
+                if (current_tuple != null) break;
+            }
             if (current_tuple.eof) break;
             left_tuples.add(current_tuple);
             if (hash_table.containsKey(current_tuple.fields[class_leftNo])) {
@@ -59,7 +63,10 @@ public class HashJoin implements VolcanoOperator {
         // Implement
         DBTuple tuple_right;
         if (!lag) {
-            tuple_right = class_right.next();
+            while (true) {
+                tuple_right = class_right.next();
+                if (tuple_right != null) break;
+            }
             this.lag_right_tuple = tuple_right;
         } else tuple_right = this.lag_right_tuple;
 
@@ -90,7 +97,7 @@ public class HashJoin implements VolcanoOperator {
             System.arraycopy(tuple_right.types, 0, new_types, types_len_left, types_len_right);
             return new DBTuple(new_fields, new_types);
         }
-        return this.next();
+        return null;
     }
 
     @Override

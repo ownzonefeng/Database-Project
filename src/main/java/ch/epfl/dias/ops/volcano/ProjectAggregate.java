@@ -32,7 +32,14 @@ public class ProjectAggregate implements VolcanoOperator {
 	@Override
 	public DBTuple next() {
 		// Implement
-		DBTuple current_tuple = this.class_VolOp.next();
+		DBTuple current_tuple;
+		while (true) {
+			current_tuple = this.class_VolOp.next();
+			if (current_tuple != null) break;
+		}
+
+		if (current_tuple.eof) throw new RuntimeException("Empty Agg Set");
+
 		Object[] new_fields = new Object[1];
 		DataType[] new_types = new DataType[1];
 		new_types[0] = this.class_dt;
@@ -50,7 +57,10 @@ public class ProjectAggregate implements VolcanoOperator {
 					while (!current_tuple.eof) {
 						count++;
 						value = value + current_tuple.getFieldAsDouble(this.class_fieldNo);
-						current_tuple = this.class_VolOp.next();
+						while (true) {
+							current_tuple = this.class_VolOp.next();
+							if (current_tuple != null) break;
+						}
 					}
 					break;
 				case MAX:
@@ -58,7 +68,10 @@ public class ProjectAggregate implements VolcanoOperator {
 					while (!current_tuple.eof) {
 						count = 1;
 						value = Math.max(value, current_tuple.getFieldAsDouble(this.class_fieldNo));
-						current_tuple = this.class_VolOp.next();
+						while (true) {
+							current_tuple = this.class_VolOp.next();
+							if (current_tuple != null) break;
+						}
 					}
 					break;
 				case MIN:
@@ -66,14 +79,20 @@ public class ProjectAggregate implements VolcanoOperator {
 					while (!current_tuple.eof) {
 						count = 1;
 						value = Math.min(value, current_tuple.getFieldAsDouble(this.class_fieldNo));
-						current_tuple = this.class_VolOp.next();
+						while (true) {
+							current_tuple = this.class_VolOp.next();
+							if (current_tuple != null) break;
+						}
 					}
 					break;
 				case SUM:
 					while (!current_tuple.eof) {
 						count = 1;
 						value = value + current_tuple.getFieldAsDouble(this.class_fieldNo);
-						current_tuple = this.class_VolOp.next();
+						while (true) {
+							current_tuple = this.class_VolOp.next();
+							if (current_tuple != null) break;
+						}
 					}
 					break;
 			}

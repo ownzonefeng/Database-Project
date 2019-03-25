@@ -52,7 +52,7 @@ public class Select implements VolcanoOperator {
 				break;
 
         }
-		return this.next();
+        return null;
 	}
 
 	@Override

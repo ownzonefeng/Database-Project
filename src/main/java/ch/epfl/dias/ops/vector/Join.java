@@ -33,12 +33,16 @@ public class Join implements VectorOperator {
 		// Implement
 		class_left.open();
 		class_right.open();
-		DBColumn[] col_left = class_left.next();
-		if (col_left == null) throw new RuntimeException("Null Left Object");
+        DBColumn[] col_left;
+        while (true) {
+            col_left = class_left.next();
+            if (col_left != null) break;
+        }
+        if (col_left[0].eof) throw new RuntimeException("Null Left Object");
 		left_length = col_left.length;
 		vector_length = col_left[0].fields.length;
 		int i = 0;
-		while (col_left != null) {
+        while (!col_left[0].eof) {
 			left_vectors.add(col_left);
 			for (Object value : col_left[class_leftNo].fields) {
 				if (!hash_table.containsKey(value)) {
@@ -61,8 +65,12 @@ public class Join implements VectorOperator {
 	@Override
 	public DBColumn[] next() {
 		// Implement
-		DBColumn[] col_right = class_right.next();
-		if (col_right == null) return null;
+        DBColumn[] col_right;
+        while (true) {
+            col_right = class_right.next();
+            if (col_right != null) break;
+        }
+        if (col_right[0].eof) return col_right;
 		int right_length = col_right.length;
 		ArrayList<Integer> new_left_tids = new ArrayList<>();
 		ArrayList<Integer> new_right_tids = new ArrayList<>();

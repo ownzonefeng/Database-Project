@@ -12,6 +12,7 @@ public class DBColumn {
 	public DataType types;
 	public ArrayList<Integer> tid;
 	public boolean lateMaterialization;
+	public boolean eof = false;
 
 	public DBColumn(Object[] fields, DataType types, ArrayList<Integer> tuple_ids, boolean late_Materialization) {
 		this.fields = fields;
@@ -23,6 +24,10 @@ public class DBColumn {
 	public DBColumn(Object[] fields, DataType types) {
 		this.fields = fields;
 		this.types = types;
+	}
+
+	public DBColumn() {
+		this.eof = true;
 	}
 
 	public int[] getAsInteger() {
