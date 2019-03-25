@@ -74,10 +74,11 @@ public class VolcanoTestPAX {
         paxData = new PAXStore(schema, "input/data.csv", ",", 3);
         paxData.load();
 
-        paxOrder = new PAXStore(orderSchema, "input/orders_test.csv", "\\|", 3);
+        int tuple_perpage = 50;
+        paxOrder = new PAXStore(orderSchema, "input/orders_test.csv", "\\|", tuple_perpage);
         paxOrder.load();
 
-        paxLineItem = new PAXStore(lineitemSchema, "input/lineitem_test.csv", "\\|", 3);
+        paxLineItem = new PAXStore(lineitemSchema, "input/lineitem_test.csv", "\\|", tuple_perpage);
         paxLineItem.load();
     }
 

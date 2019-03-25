@@ -30,7 +30,7 @@ public class VectorTest {
             126998.88, 186600.18};
     int numTuplesData = 11;
     int numTuplesOrder = 10;
-    int standardVectorsize = 50;
+    int standardVectorsize = 80;
 
     @Before
     public void init() throws IOException {

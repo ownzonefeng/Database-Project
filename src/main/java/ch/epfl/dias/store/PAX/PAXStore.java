@@ -43,6 +43,7 @@ public class PAXStore extends Store {
 		int size = contents.size();
 		this.max_row = size;
 		int pagesNo = size / this.tuplesPerPage + 1;
+		if (size % this.tuplesPerPage == 0) pagesNo = pagesNo - 1;
 		orders = new DBPAXpage[pagesNo];
 		for(int i = 0; i < pagesNo; i ++)
 		{
