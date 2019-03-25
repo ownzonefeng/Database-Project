@@ -55,8 +55,8 @@ public class ProjectAggregate implements ColumnarOperator {
 				count = tids.size();
 				break;
 		}
-		DBColumn return_col = new DBColumn(new Object[]{value}, op_col.types);
-		if (class_agg == Aggregate.COUNT) return_col = new DBColumn(new Object[]{count}, op_col.types);
+        DBColumn return_col = new DBColumn(new Object[]{value}, class_dt);
+        if (class_agg == Aggregate.COUNT) return_col = new DBColumn(new Object[]{count}, class_dt);
 		return new DBColumn[]{return_col};
 	}
 }

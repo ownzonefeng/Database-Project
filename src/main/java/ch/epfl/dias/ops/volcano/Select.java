@@ -50,9 +50,8 @@ public class Select implements VolcanoOperator {
 			case GT:
 				if (fieldValue > this.class_value) return current_tuple;
 				break;
-			default:
-				return this.next();
-		}
+
+        }
 		return this.next();
 	}
 

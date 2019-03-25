@@ -10,6 +10,7 @@ import ch.epfl.dias.ops.volcano.HashJoin;
 import ch.epfl.dias.ops.volcano.ProjectAggregate;
 import ch.epfl.dias.ops.volcano.Select;
 import ch.epfl.dias.store.DataType;
+import ch.epfl.dias.store.PAX.PAXStore;
 import ch.epfl.dias.store.row.DBTuple;
 import ch.epfl.dias.store.row.RowStore;
 
@@ -22,9 +23,9 @@ public class VolcanoTestPAX {
     DataType[] lineitemSchema;
     DataType[] schema;
 
-    RowStore rowstoreData;
-    RowStore rowstoreOrder;
-    RowStore rowstoreLineItem;
+    PAXStore paxData;
+    PAXStore paxOrder;
+    PAXStore paxLineItem;
 
     @Before
     public void init() throws IOException {
@@ -70,20 +71,20 @@ public class VolcanoTestPAX {
                 DataType.STRING,
                 DataType.STRING};
 
-        rowstoreData = new RowStore(schema, "input/data.csv", ",");
-        rowstoreData.load();
+        paxData = new PAXStore(schema, "input/data.csv", ",", 3);
+        paxData.load();
 
-        rowstoreOrder = new RowStore(orderSchema, "input/orders_big.csv", "\\|");
-        rowstoreOrder.load();
+        paxOrder = new PAXStore(orderSchema, "input/orders_test.csv", "\\|", 3);
+        paxOrder.load();
 
-        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
-        rowstoreLineItem.load();
+        paxLineItem = new PAXStore(lineitemSchema, "input/lineitem_test.csv", "\\|", 3);
+        paxLineItem.load();
     }
 
     @Test
     public void spTestData() {
         /* SELECT COUNT(*) FROM data WHERE col4 == 6 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreData);
+        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(paxData);
         ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 3, 6);
         ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
 
@@ -98,7 +99,7 @@ public class VolcanoTestPAX {
     @Test
     public void spTestOrder() {
         /* SELECT COUNT(*) FROM data WHERE col0 == 6 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
+        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(paxOrder);
         ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 0, 6);
         ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
 
@@ -113,7 +114,7 @@ public class VolcanoTestPAX {
     @Test
     public void spTestLineItem() {
         /* SELECT COUNT(*) FROM data WHERE col0 == 3 */
-        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
+        ch.epfl.dias.ops.volcano.Scan scan = new ch.epfl.dias.ops.volcano.Scan(paxLineItem);
         ch.epfl.dias.ops.volcano.Select sel = new ch.epfl.dias.ops.volcano.Select(scan, BinaryOp.EQ, 0, 3);
         ch.epfl.dias.ops.volcano.ProjectAggregate agg = new ch.epfl.dias.ops.volcano.ProjectAggregate(sel, Aggregate.COUNT, DataType.INT, 2);
 
@@ -122,15 +123,15 @@ public class VolcanoTestPAX {
         // This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
     @Test
     public void joinTest1() {
         /* SELECT COUNT(*) FROM order JOIN lineitem ON (o_orderkey = orderkey) WHERE orderkey = 3;*/
 
-        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
-        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
+        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(paxOrder);
+        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(paxLineItem);
 
         /*Filtering on both sides */
         Select selOrder = new Select(scanOrder, BinaryOp.EQ, 0, 3);
@@ -143,7 +144,7 @@ public class VolcanoTestPAX {
         //This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
 
@@ -151,8 +152,8 @@ public class VolcanoTestPAX {
     public void joinTest2() {
         /* SELECT COUNT(*) FROM lineitem JOIN order ON (o_orderkey = orderkey) WHERE orderkey = 3;*/
 
-        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(rowstoreOrder);
-        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(rowstoreLineItem);
+        ch.epfl.dias.ops.volcano.Scan scanOrder = new ch.epfl.dias.ops.volcano.Scan(paxOrder);
+        ch.epfl.dias.ops.volcano.Scan scanLineitem = new ch.epfl.dias.ops.volcano.Scan(paxLineItem);
 
         /*Filtering on both sides */
         Select selOrder = new Select(scanOrder, BinaryOp.EQ, 0, 3);
@@ -165,7 +166,7 @@ public class VolcanoTestPAX {
         //This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
 

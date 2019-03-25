@@ -73,10 +73,10 @@ public class VolcanoTestNSM {
         rowstoreData = new RowStore(schema, "input/data.csv", ",");
         rowstoreData.load();
 
-        rowstoreOrder = new RowStore(orderSchema, "input/orders_big.csv", "\\|");
+        rowstoreOrder = new RowStore(orderSchema, "input/orders_test.csv", "\\|");
         rowstoreOrder.load();
 
-        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
+        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_test.csv", "\\|");
         rowstoreLineItem.load();
     }
 
@@ -122,7 +122,7 @@ public class VolcanoTestNSM {
         // This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
     @Test
@@ -143,7 +143,7 @@ public class VolcanoTestNSM {
         //This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
 
@@ -165,7 +165,7 @@ public class VolcanoTestNSM {
         //This query should return only one result
         DBTuple result = agg.next();
         int output = result.getFieldAsInt(0);
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
 

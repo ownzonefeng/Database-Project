@@ -32,7 +32,7 @@ public class VectorTest {
             126998.88, 186600.18};
     int numTuplesData = 11;
     int numTuplesOrder = 10;
-    int standardVectorsize = 3;
+    int standardVectorsize = 50;
 
     @Before
     public void init() throws IOException {
@@ -50,10 +50,10 @@ public class VectorTest {
         columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
         columnstoreData.load();
 
-        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_big.csv", "\\|");
+        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_test.csv", "\\|");
         columnstoreOrder.load();
 
-        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
+        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_test.csv", "\\|");
         columnstoreLineItem.load();
 
         //columnstoreEmpty = new ColumnStore(schema, "input/empty.csv", ",");
@@ -108,7 +108,7 @@ public class VectorTest {
         // This query should return only one result
         int output = result[0].getAsInteger()[0];
 
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
 }

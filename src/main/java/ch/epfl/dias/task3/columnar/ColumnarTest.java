@@ -39,10 +39,10 @@ public class ColumnarTest {
         columnstoreData = new ColumnStore(schema, "input/data.csv", ",");
         columnstoreData.load();
 
-        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_big.csv", "\\|");
+        columnstoreOrder = new ColumnStore(orderSchema, "input/orders_test.csv", "\\|");
         columnstoreOrder.load();
 
-        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
+        columnstoreLineItem = new ColumnStore(lineitemSchema, "input/lineitem_test.csv", "\\|");
         columnstoreLineItem.load();
     }
 
@@ -91,7 +91,7 @@ public class ColumnarTest {
         // This query should return only one result
         int output = result[0].getAsInteger()[0];
 
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
     @Test
@@ -117,7 +117,7 @@ public class ColumnarTest {
         // This query should return only one result
         int output = result[0].getAsInteger()[0];
 
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 
     @Test
@@ -143,6 +143,6 @@ public class ColumnarTest {
         // This query should return only one result
         int output = result[0].getAsInteger()[0];
 
-        assertTrue(output == 3);
+        assertTrue(output == 6);
     }
 }
