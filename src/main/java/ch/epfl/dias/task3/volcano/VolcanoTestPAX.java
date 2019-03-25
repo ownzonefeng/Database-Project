@@ -16,7 +16,7 @@ import ch.epfl.dias.store.row.RowStore;
 import org.junit.Before;
 import org.junit.Test;
 
-public class VolcanoTest {
+public class VolcanoTestPAX {
 
     DataType[] orderSchema;
     DataType[] lineitemSchema;
@@ -73,10 +73,10 @@ public class VolcanoTest {
         rowstoreData = new RowStore(schema, "input/data.csv", ",");
         rowstoreData.load();
 
-        rowstoreOrder = new RowStore(orderSchema, "input/orders_small.csv", "\\|");
+        rowstoreOrder = new RowStore(orderSchema, "input/orders_big.csv", "\\|");
         rowstoreOrder.load();
 
-        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_small.csv", "\\|");
+        rowstoreLineItem = new RowStore(lineitemSchema, "input/lineitem_big.csv", "\\|");
         rowstoreLineItem.load();
     }
 

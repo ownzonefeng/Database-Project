@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e72f11b0-5643-4245-928d-cea53014d696" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="e72f11b0-5643-4245-928d-cea53014d696" name="Default Changelist" comment="add task3 tests">
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/volcano/VolcanoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/volcano/VolcanoTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,7 +39,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="295">
+            <state relative-caret-position="540">
               <caret line="36" column="39" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -50,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+            <state relative-caret-position="268">
+              <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
             </state>
           </provider>
         </entry>
@@ -59,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+            <state relative-caret-position="563">
+              <caret line="55" column="81" selection-start-line="55" selection-start-column="81" selection-end-line="55" selection-end-column="81" />
             </state>
           </provider>
         </entry>
@@ -68,8 +69,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/volcano/VolcanoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1320">
-              <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+            <state relative-caret-position="1170">
+              <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -118,9 +119,9 @@
         <option value="$PROJECT_DIR$/src/test/java/ch/epfl/dias/ops/vector/VectorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/store/column/DBColumn.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/Main.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/volcano/VolcanoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java" />
       </list>
     </option>
   </component>
@@ -143,12 +144,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="cs422-project1" type="b2602c69:ProjectViewProjectNode" />
               <item name="Database-Project" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs422-project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Database-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="input" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs422-project1" type="b2602c69:ProjectViewProjectNode" />
@@ -184,6 +192,16 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="dias" type="462c0819:PsiDirectoryNode" />
               <item name="task3" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cs422-project1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Database-Project" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dias" type="462c0819:PsiDirectoryNode" />
+              <item name="task3" type="462c0819:PsiDirectoryNode" />
+              <item name="columnar" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="cs422-project1" type="b2602c69:ProjectViewProjectNode" />
@@ -239,14 +257,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553507096471" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553507518510" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -271,7 +287,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.VolcanoTest.spTestData">
+  <component name="RunManager" selected="JUnit.VolcanoTestNSM.spTestData">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch.epfl.dias.Main" />
       <module name="Database-Project" />
@@ -333,7 +349,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="VolcanoTest.spTestData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VolcanoTestNSM.spTestData" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Database-Project" />
       <extension name="coverage">
         <pattern>
@@ -342,7 +358,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="ch.epfl.dias.task3.volcano" />
-      <option name="MAIN_CLASS_NAME" value="ch.epfl.dias.task3.volcano.VolcanoTest" />
+      <option name="MAIN_CLASS_NAME" value="ch.epfl.dias.task3.volcano.VolcanoTestNSM" />
       <option name="METHOD_NAME" value="spTestData" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -351,7 +367,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VolcanoTest.spTestData" />
+        <item itemvalue="JUnit.VolcanoTestNSM.spTestData" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.VectorTest.spTestLineItem" />
         <item itemvalue="JUnit.VectorTest.spTestOrder" />
@@ -381,6 +397,7 @@
       <workItem from="1553367725525" duration="5329000" />
       <workItem from="1553429287585" duration="11079000" />
       <workItem from="1553456975379" duration="1102000" />
+      <workItem from="1553507123485" duration="251000" />
     </task>
     <task id="LOCAL-00001" summary="complete NSM and DSM">
       <created>1552835097928</created>
@@ -445,7 +462,14 @@
       <option name="project" value="LOCAL" />
       <updated>1553456889853</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add task3 tests">
+      <created>1553507158195</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1553507158195</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -481,7 +505,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90200000" />
+    <option name="totallyTimeSpent" value="90451000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -495,7 +519,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2832723" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2863248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -571,7 +595,8 @@
     <MESSAGE value="complete all volcano tests" />
     <MESSAGE value="complete all columnar tests" />
     <MESSAGE value="complete all vector tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete all vector tests" />
+    <MESSAGE value="add task3 tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="add task3 tests" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -882,30 +907,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/Test_read.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="30" column="27" selection-start-line="30" selection-start-column="27" selection-end-line="30" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/Test_read.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/store/column/DBColumn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="600">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="36" column="39" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -919,24 +925,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="21" column="27" lean-forward="true" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="27" />
+        <state relative-caret-position="540">
+          <caret line="36" column="39" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/vector/VectorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
+        <state relative-caret-position="563">
+          <caret line="55" column="81" selection-start-line="55" selection-start-column="81" selection-end-line="55" selection-end-column="81" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/columnar/ColumnarTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="32" column="75" selection-start-line="32" selection-start-column="75" selection-end-line="32" selection-end-column="75" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ch/epfl/dias/task3/volcano/VolcanoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1320">
-          <caret line="88" column="4" lean-forward="true" selection-start-line="88" selection-start-column="4" selection-end-line="88" selection-end-column="4" />
+        <state relative-caret-position="1170">
+          <caret line="78" column="75" selection-start-line="78" selection-start-column="75" selection-end-line="78" selection-end-column="75" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
