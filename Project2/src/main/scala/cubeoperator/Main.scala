@@ -35,6 +35,11 @@ object Main {
     var groupingList = List("lo_suppkey","lo_shipmode","lo_orderdate")
 
     val res = cb.cube(dataset, groupingList, "lo_supplycost", "SUM")
+    val r = scala.util.Random
+    val id = r.nextInt(10000)
+    val output = "output" + id.toString
+    res.saveAsTextFile(output)
+    print(output)
 
     /*
        The above call corresponds to the query:
@@ -45,9 +50,9 @@ object Main {
 
 
     //Perform the same query using SparkSQL
-    //    val q1 = df.cube("lo_suppkey","lo_shipmode","lo_orderdate")
-    //      .agg(sum("lo_supplycost") as "sum supplycost")
-    //    q1.show
+    //        val q1 = df.cube("lo_suppkey","lo_shipmode","lo_orderdate")
+    //          .agg(sum("lo_supplycost") as "sum supplycost")
+    //        q1.show
 
 
   }
