@@ -5,10 +5,14 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import org.apache.spark.sql.functions._
 import java.io._
+import org.apache.log4j.{Level, Logger}
 
 object Main {
   def main(args: Array[String]) {
     val reducers = 10
+
+    val rootLogger = Logger.getRootLogger()
+    rootLogger.setLevel(Level.ERROR)
 
     val inputFile= "../lineorder_small.tbl"
     val input = new File(getClass.getResource(inputFile).getFile).getPath
@@ -16,6 +20,7 @@ object Main {
     val sparkConf = new SparkConf().setAppName("CS422-Project2").setMaster("local[16]")
     val ctx = new SparkContext(sparkConf)
     val sqlContext = new org.apache.spark.sql.SQLContext(ctx)
+
 
     val df = sqlContext.read
       .format("com.databricks.spark.csv")

@@ -1,0 +1,5 @@
+[0m[[0mdebug[0m] [0mCopy resource mappings: [0m
+[0m[[0mdebug[0m] [0m	(/Users/wentao/Documents/GitHub/Database-Project/Project2/src/main/resources/dblp_10K.csv,/Users/wentao/Documents/GitHub/Database-Project/Project2/target/scala-2.11/classes/dblp_10K.csv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/wentao/Documents/GitHub/Database-Project/Project2/src/main/resources/lineorder_small.tbl,/Users/wentao/Documents/GitHub/Database-Project/Project2/target/scala-2.11/classes/lineorder_small.tbl)[0m
+[0m[[0mdebug[0m] [0m	(/Users/wentao/Documents/GitHub/Database-Project/Project2/src/main/resources/dblp_small.csv,/Users/wentao/Documents/GitHub/Database-Project/Project2/target/scala-2.11/classes/dblp_small.csv)[0m
+[0m[[0mdebug[0m] [0m	(/Users/wentao/Documents/GitHub/Database-Project/Project2/src/main/resources/log4j.properties,/Users/wentao/Documents/GitHub/Database-Project/Project2/target/scala-2.11/classes/log4j.properties)[0m
