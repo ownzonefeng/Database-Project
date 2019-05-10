@@ -3,13 +3,16 @@ package simjoin
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
 import org.apache.spark.sql.types._
-import org.apache.spark.sql.{SQLContext, Row, DataFrame}
-import com.typesafe.config.{ConfigFactory, Config}
+import org.apache.spark.sql.{DataFrame, Row, SQLContext}
+import com.typesafe.config.{Config, ConfigFactory}
 import org.apache.spark.sql.expressions._
 import org.apache.spark.sql.functions._
 
 import scala.io.Source
 import java.io._
+
+import distance._
+
 
 object Main {
   def main(args: Array[String]) {     
@@ -35,24 +38,25 @@ object Main {
     val dataset = new Dataset(rdd, schema)           
     
     
-    val t1 = System.nanoTime    
+    val t1 = System.nanoTime
     val sj = new SimilarityJoin(numAnchors, distanceThreshold)
-    val res = sj.similarity_join(dataset, attrIndex)           
-    
+    val res = sj.similarity_join(dataset, attrIndex)
+
     val resultSize = res.count
     println(resultSize)
     val t2 = System.nanoTime
-            
+
     println((t2-t1)/(Math.pow(10,9)))
-    
-    /*
+
+
+
     // cartesian
-    val t1Cartesian = System.nanoTime
-    val cartesian = rdd.map(x => (x(attrIndex), x)).cartesian(rdd.map(x => (x(attrIndex), x)))
-                                   .filter(x => (x._1._2(attrIndex).toString() != x._2._2(attrIndex).toString() && edit_distance(x._1._2(attrIndex).toString(), x._2._2(attrIndex).toString()) <= distanceThreshold))
-                                   
-    println(cartesian.count)
-    val t2Cartesian = System.nanoTime
-    println((t2Cartesian-t1Cartesian)/(Math.pow(10,9)))*/    
+//    val t1Cartesian = System.nanoTime
+//    val cartesian = rdd.map(x => (x(attrIndex), x)).cartesian(rdd.map(x => (x(attrIndex), x)))
+//                                   .filter(x => x._1._2(attrIndex).toString != x._2._2(attrIndex).toString && editDistance(x._1._2(attrIndex).toString, x._2._2(attrIndex).toString) <= distanceThreshold)
+//
+//    println(cartesian.count)
+//    val t2Cartesian = System.nanoTime
+//    println((t2Cartesian-t1Cartesian)/(Math.pow(10,9)))
   }     
 }

@@ -4,7 +4,7 @@
 		module="cs422-project2$sbt_2.10"
 		revision="0.1.0"
 		status="integration"
-		publication="20190509170151"
+		publication="20190510205739"
 	/>
 	<configurations>
 		<conf name="default" visibility="public"/>

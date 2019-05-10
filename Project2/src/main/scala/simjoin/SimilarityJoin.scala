@@ -6,6 +6,7 @@ import org.apache.spark.sql.Row
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
+import distance._
 
 class SimilarityJoin(numAnchors: Int, distThreshold:Int) extends java.io.Serializable {
   val logger = LoggerFactory.getLogger("SimilarityJoin")
