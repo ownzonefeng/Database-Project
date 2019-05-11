@@ -16,7 +16,7 @@ import distance._
 
 object Main {
   def main(args: Array[String]) {     
-    val inputFile="../dblp_small.csv"    
+    val inputFile="../dblp_small.csv"
     val numAnchors = 4
     val distanceThreshold = 2
     val attrIndex = 0    
@@ -46,17 +46,19 @@ object Main {
     println(resultSize)
     val t2 = System.nanoTime
 
-    println((t2-t1)/(Math.pow(10,9)))
+    println((t2-t1)/ Math.pow(10,9))
+
+
 
 
 
     // cartesian
-//    val t1Cartesian = System.nanoTime
-//    val cartesian = rdd.map(x => (x(attrIndex), x)).cartesian(rdd.map(x => (x(attrIndex), x)))
-//                                   .filter(x => x._1._2(attrIndex).toString != x._2._2(attrIndex).toString && editDistance(x._1._2(attrIndex).toString, x._2._2(attrIndex).toString) <= distanceThreshold)
-//
-//    println(cartesian.count)
-//    val t2Cartesian = System.nanoTime
-//    println((t2Cartesian-t1Cartesian)/(Math.pow(10,9)))
+    val t1Cartesian = System.nanoTime
+    val cartesian = rdd.map(x => x(attrIndex)).cartesian(rdd.map(x => x(attrIndex)))
+                                   .filter(x => x._1.toString != x._2.toString && editDistance(x._1.toString, x._2.toString) <= distanceThreshold)
+
+    println(cartesian.count())
+    val t2Cartesian = System.nanoTime
+    println((t2Cartesian-t1Cartesian)/ Math.pow(10,9))
   }     
 }
