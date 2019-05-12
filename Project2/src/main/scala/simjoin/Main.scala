@@ -10,8 +10,10 @@ import org.apache.spark.sql.functions._
 
 import scala.io.Source
 import java.io._
+import java.time.LocalDateTime
 
 import distance._
+import java.time.format.DateTimeFormatter
 
 
 object Main {
@@ -35,9 +37,23 @@ object Main {
     
     val rdd = df.rdd        
     val schema = df.schema.toList.map(x => x.name)    
-    val dataset = new Dataset(rdd, schema)           
+    val dataset = new Dataset(rdd, schema)
+
+    val startTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").format(LocalDateTime.now)
+    println(startTime)
+
+    // cartesian
+    println("cartesian")
+    val t1Cartesian = System.nanoTime
+    val cartesian = rdd.map(x => x(attrIndex)).cartesian(rdd.map(x => x(attrIndex)))
+      .filter(x => x._1.toString != x._2.toString && editDistance(x._1.toString, x._2.toString) <= distanceThreshold)
+
+    println(cartesian.count())
+    val t2Cartesian = System.nanoTime
+    println((t2Cartesian-t1Cartesian)/ Math.pow(10,9))
     
-    
+    //Similarity join
+    println("similarity join")
     val t1 = System.nanoTime
     val sj = new SimilarityJoin(numAnchors, distanceThreshold)
     val res = sj.similarity_join(dataset, attrIndex)
@@ -48,17 +64,5 @@ object Main {
 
     println((t2-t1)/ Math.pow(10,9))
 
-
-
-
-
-    // cartesian
-    val t1Cartesian = System.nanoTime
-    val cartesian = rdd.map(x => x(attrIndex)).cartesian(rdd.map(x => x(attrIndex)))
-                                   .filter(x => x._1.toString != x._2.toString && editDistance(x._1.toString, x._2.toString) <= distanceThreshold)
-
-    println(cartesian.count())
-    val t2Cartesian = System.nanoTime
-    println((t2Cartesian-t1Cartesian)/ Math.pow(10,9))
   }     
 }
