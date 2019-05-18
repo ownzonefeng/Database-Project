@@ -560,7 +560,6 @@
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.6 {default=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.6 {default=[default(compile)]}
 [info] Resolving org.scala-sbt#compile;0.13.15 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-sbt#compile;0.13.15 {compile=[default(compile)]}
-[debug] no default cache defined: set to /Users/wentao/.ivy2/cache
 [debug] sbt-chain: module revision found in cache: org.scala-sbt#compile;0.13.15
 [debug] 	found org.scala-sbt#compile;0.13.15 in sbt-chain
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-compiler;2.10.6 {test=[default(compile)]} => dependency: org.scala-lang#scala-compiler;2.10.6 {test=[default(compile)]}
@@ -657,6 +656,7 @@
 [info] Resolving org.scala-tools.sbinary#sbinary_2.10;0.4.2 ...
 [debug] sbt-chain: Checking cache for: dependency: org.scala-tools.sbinary#sbinary_2.10;0.4.2 {compile=[default(compile)]}
 [debug] sbt-chain: module revision found in cache: org.scala-tools.sbinary#sbinary_2.10;0.4.2
+[debug] no default cache defined: set to /Users/wentao/.ivy2/cache
 [debug] 	found org.scala-tools.sbinary#sbinary_2.10;0.4.2 in sbt-chain
 [debug] dependency descriptor has been mediated: dependency: org.scala-lang#scala-library;2.10.2 {compile=[default(compile)]} => dependency: org.scala-lang#scala-library;2.10.2 {compile=[default(compile)]}
 [debug] == resolving dependencies org.scala-tools.sbinary#sbinary_2.10;0.4.2->org.scala-lang#scala-library;2.10.2 [compile->default(compile)]
@@ -1929,9 +1929,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.15!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 385ms :: artifacts dl 21ms
+[debug] :: resolution report :: resolve 482ms :: artifacts dl 25ms
 [debug] 	report for cs422-project2#cs422-project2$sbt_2.10;0.1.0 default produced in /Users/wentao/Documents/GitHub/Database-Project/Project2/target/resolution-cache/reports/cs422-project2-cs422-project2$sbt_2.10-default.xml
-[debug] 	resolve done (385ms resolve - 21ms download)
+[debug] 	resolve done (482ms resolve - 25ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: cs422-project2#cs422-project2$sources_2.10;0.1.0
 [debug] 	confs: [default]
@@ -2665,6 +2665,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#incremental-compiler;0.13.15!incremental-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#logic;0.13.15!logic.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#main-settings;0.13.15!main-settings.jar(src)
-[debug] :: resolution report :: resolve 152ms :: artifacts dl 62ms
+[debug] :: resolution report :: resolve 168ms :: artifacts dl 22ms
 [debug] 	report for cs422-project2#cs422-project2$sources_2.10;0.1.0 default produced in /Users/wentao/Documents/GitHub/Database-Project/Project2/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.10-default.xml
-[debug] 	resolve done (152ms resolve - 62ms download)
+[debug] 	resolve done (168ms resolve - 22ms download)

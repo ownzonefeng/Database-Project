@@ -4,7 +4,7 @@
 		module="cs422-project2_2.11"
 		revision="0.1.0"
 		status="integration"
-		publication="20190509170152"
+		publication="20190513163003"
 	>
 		<description>
 		CS422-Project2
@@ -39,7 +39,7 @@
 		<dependency org="org.scalaj" name="scalaj-http_2.11" rev="2.3.0" conf="compile->default(compile)"/>
 		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.5" conf="compile->default(compile)"/>
 		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.5" conf="compile->default(compile)"/>
-		<dependency org="org.apache.spark" name="spark-mllib_2.11" rev="2.2.0" conf="provided->default(compile)"/>
+		<dependency org="org.apache.spark" name="spark-mllib_2.11" rev="2.2.0" conf="compile->default(compile)"/>
 		<dependency org="org.apache.spark" name="spark-streaming_2.11" rev="1.3.1" conf="compile->default(compile)"/>
 		<dependency org="com.twitter" name="algebird-core_2.11" rev="0.8.0" conf="compile->default(compile)"/>
 		<dependency org="com.twitter" name="algebird-spark_2.11" rev="0.11.0" conf="compile->default(compile)"/>

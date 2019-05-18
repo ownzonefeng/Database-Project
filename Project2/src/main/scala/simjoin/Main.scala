@@ -15,11 +15,16 @@ import java.time.LocalDateTime
 import distance._
 import java.time.format.DateTimeFormatter
 
+import org.apache.log4j.{Level, Logger}
+
 
 object Main {
-  def main(args: Array[String]) {     
-    val inputFile="../dblp_small.csv"
-    val numAnchors = 4
+  def main(args: Array[String]) {
+    val rootLogger = Logger.getRootLogger()
+    rootLogger.setLevel(Level.ERROR)
+
+    val inputFile="../dblp_10K.csv"
+    val numAnchors = 100
     val distanceThreshold = 2
     val attrIndex = 0    
         
