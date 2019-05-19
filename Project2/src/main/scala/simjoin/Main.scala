@@ -53,7 +53,6 @@ object Main {
     val t1 = System.nanoTime
     val sj = new SimilarityJoin(numAnchors, distanceThreshold)
     val res = sj.similarity_join(dataset, attrIndex)
-
     val resultSize = res.count
     println(resultSize)
     val t2 = System.nanoTime

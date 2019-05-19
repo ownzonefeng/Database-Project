@@ -3,78 +3,38 @@
   <component name="ChangeListManager">
     <list default="true" id="13309f0d-949a-4d4a-ab65-0f2c1368497c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/project2-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/project2-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/default/project2-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/default/project2-build/scala_2.10/sbt_0.13/0.1-SNAPSHOT/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-compile-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-compile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-docs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-docs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-optional.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-provided.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-runtime-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-runtime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-scala-tool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-sources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-sources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-test-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/resolution-cache/reports/default-project2-build-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" beforeDir="false" afterPath="$PROJECT_DIR$/project/target/streams/$global/update/$global/streams/update_cache_2.10/output" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/sampling/Description.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/sampling/Description.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dblp_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dblp_small.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/sampling/Executor.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/sampling/Executor.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/sampling/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/sampling/Main.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/simjoin/Main.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/simjoin/Main.scala" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sbt_2.10/0.1.0/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sbt_2.10/0.1.0/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sbt_2.10/0.1.0/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sbt_2.10/0.1.0/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.10/0.1.0/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.10/0.1.0/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.10/0.1.0/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.10/0.1.0/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.11/0.1.0/resolved.xml.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.11/0.1.0/resolved.xml.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.11/0.1.0/resolved.xml.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/cs422-project2/cs422-project2$sources_2.11/0.1.0/resolved.xml.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sbt_2.10-default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sbt_2.10-default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.10-default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.10-default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-compile-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-compile-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-compile.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-compile.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-docs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-docs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-optional.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-optional.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-plugin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-plugin.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-provided.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-provided.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-runtime-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-runtime-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-runtime.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-runtime.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-scala-tool.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-scala-tool.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-sources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-sources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-test-internal.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-test-internal.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-test.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.11-test.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Description.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Description.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/dblp_small.csv" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/dblp_small.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Executor$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Executor$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Main$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Sampler$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Sampler$.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Sampler.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/sampling/Sampler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$$anonfun$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/Main$.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$10.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$10.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$11.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$11.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$12.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$12.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$13.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$13.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$10.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$11.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$12.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$13.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$5.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$5.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$6.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$6.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$7.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$7.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$8.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$8.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$9.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$9.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin$$anonfun$9.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/scala-2.11/classes/simjoin/SimilarityJoin.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/dependencyPositions/$global/streams/update_cache_2.11/output_dsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateClassifiers/$global/streams/out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/$global/updateSbtClassifiers/$global/streams/out" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/export" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/compileIncremental/$global/streams/out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/copyResources/$global/streams/copy-resources" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/compile/incCompileSetup/$global/streams/inc_compile_2.11" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/streams/test/definedTests/$global/streams/out" beforeDir="false" afterPath="$PROJECT_DIR$/target/streams/test/definedTests/$global/streams/out" afterDir="false" />
     </list>
@@ -100,8 +60,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+            <state relative-caret-position="-777">
+              <caret line="15" column="160" selection-start-line="15" selection-start-column="160" selection-end-line="15" selection-end-column="160" />
               <folding>
                 <element signature="e#19#50#0" expanded="true" />
               </folding>
@@ -112,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Main.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+            <state relative-caret-position="513">
+              <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
               <folding>
                 <element signature="e#18#57#0" expanded="true" />
               </folding>
@@ -124,8 +84,65 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="226">
-              <caret line="27" column="70" lean-forward="true" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
+            <state relative-caret-position="310">
+              <caret line="38" column="112" lean-forward="true" selection-start-line="38" selection-start-column="112" selection-end-line="38" selection-end-column="112" />
+              <folding>
+                <element signature="e#17#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_10K.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="363">
+              <caret line="1999" column="16" lean-forward="true" selection-end-line="1999" selection-end-column="16" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/distance.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/Main.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
+              <folding>
+                <element signature="e#17#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_small.csv">
+          <provider selected="true" editor-type-id="csv-text-editor">
+            <state relative-caret-position="615">
+              <caret line="1999" column="16" selection-start-line="1999" selection-start-column="16" selection-end-line="1999" selection-end-column="16" />
+            </state>
+          </provider>
+          <provider editor-type-id="csv-table-editor">
+            <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/test.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
               <folding>
                 <element signature="e#17#48#0" expanded="true" />
               </folding>
@@ -148,10 +165,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Executor.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2784">
-              <caret line="218" selection-start-line="218" selection-end-line="218" />
+            <state relative-caret-position="3015">
+              <caret line="201" column="3" lean-forward="true" selection-start-line="201" selection-start-column="3" selection-end-line="201" selection-end-column="3" />
               <folding>
-                <element signature="e#18#49#0" expanded="true" />
+                <element signature="e#18#58#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -178,13 +195,13 @@
         <option value="$PROJECT_DIR$/src/main/scala/simjoin/Dataset.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/simjoin/package.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/simjoin/test.scala" />
-        <option value="$PROJECT_DIR$/src/main/resources/dblp_small.csv" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/package.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/test.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/simjoin/Main.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/Description.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/simjoin/Main.scala" />
+        <option value="$PROJECT_DIR$/src/main/resources/dblp_small.csv" />
+        <option value="$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/Executor.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/sampling/Main.scala" />
       </list>
@@ -240,14 +257,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="scala" type="462c0819:PsiDirectoryNode" />
-              <item name="cubeoperator" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CS422-Project2" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Project2" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="scala" type="462c0819:PsiDirectoryNode" />
               <item name="sampling" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -288,7 +297,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.joinMain">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="sampling.Main" />
       <module name="CS422-Project2" />
@@ -395,7 +404,7 @@
       <workItem from="1558254745332" duration="1437000" />
       <workItem from="1558256233332" duration="2929000" />
       <workItem from="1558264232706" duration="1359000" />
-      <workItem from="1558265754460" duration="6508000" />
+      <workItem from="1558265754460" duration="22657000" />
     </task>
     <task id="LOCAL-00001" summary="task1 finished">
       <created>1557414434110</created>
@@ -439,11 +448,25 @@
       <option name="project" value="LOCAL" />
       <updated>1558254456202</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Sampler">
+      <created>1558272602461</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1558272602461</updated>
+    </task>
+    <task id="LOCAL-00008" summary="New Sampler">
+      <created>1558274012126</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1558274012126</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76082000" />
+    <option name="totallyTimeSpent" value="92231000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -458,7 +481,7 @@
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15445666" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15445666" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -467,8 +490,8 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32959184" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.29081634" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.29081634" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32959184" />
@@ -540,16 +563,11 @@
     <MESSAGE value="add test code" />
     <MESSAGE value="Lineitem pass" />
     <MESSAGE value="Sample" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sample" />
+    <MESSAGE value="Sampler" />
+    <MESSAGE value="New Sampler" />
+    <option name="LAST_COMMIT_MESSAGE" value="New Sampler" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/distance.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="32" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Containers/com.tencent.xinWeChat/Data/Library/Application Support/com.tencent.xinWeChat/2.0b4.0.9/ed2b45d4164553631ddfed961c33fb29/Message/MessageTemp/84f81a1ff0df5a1ede6c59488e29be41/File/SRS.java" />
     <entry file="file://$PROJECT_DIR$/src/main/scala/cubeoperator/Dataset.scala">
       <provider selected="true" editor-type-id="text-editor">
@@ -571,16 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/test.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/test.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -589,22 +597,6 @@
             <element signature="e#18#49#0" expanded="true" />
           </folding>
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_10K.csv">
-      <provider selected="true" editor-type-id="csv-text-editor" />
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_small.csv">
-      <provider selected="true" editor-type-id="csv-text-editor">
-        <state relative-caret-position="3060">
-          <caret line="204" column="26" selection-start-line="204" selection-start-column="26" selection-end-line="204" selection-end-column="26" />
-        </state>
-      </provider>
-      <provider editor-type-id="csv-table-editor">
-        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/Dataset.scala">
@@ -617,37 +609,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/Main.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/cubeoperator/CubeOperator.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="945">
-          <caret line="63" selection-start-line="63" selection-end-line="63" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/idea.vmoptions">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="18" column="52" selection-start-line="18" selection-start-column="52" selection-end-line="18" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="226">
-          <caret line="27" column="70" lean-forward="true" selection-start-line="27" selection-start-column="70" selection-end-line="27" selection-end-column="70" />
-          <folding>
-            <element signature="e#17#48#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -661,30 +626,101 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala">
+    <entry file="jar://$USER_HOME$/.ivy2/cache/org.apache.spark/spark-core_2.11/srcs/spark-core_2.11-2.2.0-sources.jar!/org/apache/spark/rdd/RDD.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="21" column="67" lean-forward="true" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+        <state relative-caret-position="187">
+          <caret line="1157" column="22" selection-start-line="1157" selection-start-column="22" selection-end-line="1157" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/cubeoperator/CubeOperator.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="868">
+          <caret line="63" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/distance.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="72" selection-start-line="5" selection-start-column="72" selection-end-line="5" selection-end-column="72" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/Main.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="29" column="8" lean-forward="true" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="8" />
           <folding>
-            <element signature="e#19#50#0" expanded="true" />
+            <element signature="e#17#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/test.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="23" selection-start-line="13" selection-start-column="23" selection-end-line="13" selection-end-column="23" />
+          <folding>
+            <element signature="e#17#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_10K.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="363">
+          <caret line="1999" column="16" lean-forward="true" selection-end-line="1999" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/dblp_small.csv">
+      <provider selected="true" editor-type-id="csv-text-editor">
+        <state relative-caret-position="615">
+          <caret line="1999" column="16" selection-start-line="1999" selection-start-column="16" selection-end-line="1999" selection-end-column="16" />
+        </state>
+      </provider>
+      <provider editor-type-id="csv-table-editor">
+        <state showInfoPanel="true" fixedHeaders="false" rowLines="3" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/simjoin/SimilarityJoin.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="38" column="112" lean-forward="true" selection-start-line="38" selection-start-column="112" selection-end-line="38" selection-end-column="112" />
+          <folding>
+            <element signature="e#17#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Executor.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2784">
-          <caret line="218" selection-start-line="218" selection-end-line="218" />
+        <state relative-caret-position="3015">
+          <caret line="201" column="3" lean-forward="true" selection-start-line="201" selection-start-column="3" selection-end-line="201" selection-end-column="3" />
           <folding>
-            <element signature="e#18#49#0" expanded="true" />
+            <element signature="e#18#58#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Sampler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-777">
+          <caret line="15" column="160" selection-start-line="15" selection-start-column="160" selection-end-line="15" selection-end-column="160" />
+          <folding>
+            <element signature="e#19#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/sampling/Main.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="41" column="25" selection-start-line="41" selection-start-column="25" selection-end-line="41" selection-end-column="25" />
+        <state relative-caret-position="513">
+          <caret line="50" column="4" selection-start-line="50" selection-start-column="4" selection-end-line="50" selection-end-column="4" />
           <folding>
             <element signature="e#18#57#0" expanded="true" />
           </folding>

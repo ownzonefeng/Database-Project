@@ -48,6 +48,6 @@ object Main {
       assert(desc.samples(i).count() <= 1000000)
     }
     // Execute first query
-    // Executor.execute_Q1(desc, session, List("3"))
+    Executor.execute_Q1(desc, session, List("3"))
   }     
 }
