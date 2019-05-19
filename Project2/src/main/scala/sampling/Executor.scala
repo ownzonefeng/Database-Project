@@ -1,23 +1,8 @@
 package sampling
 
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{DataFrame, SparkSession}
-//import org.apache.spark.sql.Column
-import org.apache.spark.sql.functions._
-import java.sql.Date
-import org.apache.spark.sql.types.{DateType, IntegerType}
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkConf
-import org.apache.spark.SparkContext
-import org.apache.spark.sql.SQLContext
-import org.apache.spark.sql.SQLImplicits
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.sql.DataFrame
 import org.apache.spark.sql.types.StructType
-import org.apache.spark.sql.types.StructField
-import org.apache.spark.sql.types.StringType
-import org.apache.spark.sql.types.IntegerType
-import org.apache.spark.sql.Row
-import org.apache.spark.rdd.RDD
-import org.apache.spark.sql.{DataFrame, functions}
 
 
 

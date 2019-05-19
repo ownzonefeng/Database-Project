@@ -6,7 +6,6 @@ import org.apache.spark.sql.{DataFrame, Row, functions}
 
 import scala.math.{max, min}
 import org.apache.spark.sql.functions.column
-import org.apache.spark.sql.types.StructType
 
 import scala.collection.mutable
 import scala.collection.mutable.ListBuffer
@@ -27,7 +26,7 @@ object Sampler {
     //variance = 2.2957731090120003E10
 
     var lower: Long = 1
-    var upper: Long = lineitem.count()
+    var upper: Long = storageBudgetBytes
     val total_count = upper
 
     for(i <- queryColumnSet.indices)
@@ -41,7 +40,7 @@ object Sampler {
       while(upper - lower > 1 && lower < storageBudgetBytes)
       {
         val assignStrata = lineitem.withColumn("X", functions.rand(seed = 8))
-        val k: Long = (lower + upper) / 2
+        val k: Long = (upper + lower) / 2
         val ratio = k.toDouble / total_count
         val gamma1 = -math.log(e) / total_count
         val gamma2 = -(2.0 * math.log(e)) / (3.0 * total_count)
@@ -74,15 +73,12 @@ object Sampler {
             .agg(functions.sum("ele")).head().getDouble(0)
         }
         val estimated_error: Double = math.sqrt(v / sample_count.toDouble) * z
-        println(k)
+        // println(k)
         if(estimated_error < error_bound && stratum_num == sample_stratum_num)
         {
-          if(k <= storageBudgetBytes)
-          {
-            target_ratio_inverse = (total_count / k).toInt
-            target_sampleSet = sampleSet.rdd
-            final_k = k
-          }
+          target_ratio_inverse = (total_count / k).toInt
+          target_sampleSet = sampleSet.rdd
+          final_k = k
           upper = k
         }
         else
