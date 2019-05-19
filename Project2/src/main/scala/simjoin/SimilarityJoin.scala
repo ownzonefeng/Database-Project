@@ -16,17 +16,16 @@ class SimilarityJoin(numAnchors: Int, distThreshold:Int) extends java.io.Seriali
    * this method gets as input a dataset and the index of an attribute
    * of the dataset, and returns the result of the similarity self join on
    * that attribute.
-   * */  
+   * */
   def similarity_join(dataset: Dataset, attrIndex: Int) : RDD[(String, String)] = {
 
     rdd = dataset.getRDD().map(x => x(attrIndex).toString)
     val count: Long = rdd.count()
     val probability: Double = numAnchors.toDouble / count
-    val anchors = rdd.sample(false, fraction = probability, seed = 8)
-    val cartesianProduct = rdd.subtract(anchors).cartesian(anchors)
+    val anchors = rdd.sample(withReplacement = false, fraction = probability, seed = 8)
+    val cartesianProduct = rdd.subtract(anchors).cartesian(anchors).map(x => (x._1, (x._2, editDistance(x._1, x._2))))
 
-    val clusterAssign = {cartesianProduct.map(x => (x._1, (x._2, editDistance(x._1, x._2))))
-      .reduceByKey((x, y) => if(x._2 < y._2) x else y).map(x => (x._1, x._2._2))}
+    val clusterAssign = cartesianProduct.reduceByKey((x, y) => if(x._2 < y._2) x else y).map(x => (x._1, x._2._2))
 
     val outerPartition =  {clusterAssign.cartesian(anchors).map(x => (x._1._1, x._1._2, x._2, editDistance(x._1._1, x._2)))
       .filter(x => x._4 <= x._2 + 2 * distThreshold).map(x => (x._3, x._1))}
@@ -42,4 +41,3 @@ class SimilarityJoin(numAnchors: Int, distThreshold:Int) extends java.io.Seriali
   }
 
 }
-

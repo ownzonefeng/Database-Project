@@ -39,11 +39,14 @@ object Main {
     desc.ci = 0.95
 
     val tmp = Sampler.sample(desc.lineitem, 1000000, desc.e, desc.ci)
-    //desc.samples = tmp._1
-    //desc.sampleDescription = tmp._2
+    desc.samples = tmp._1
+    desc.sampleDescription = tmp._2
 
     // check storage usage for samples
-
+    for(i <- desc.samples.indices)
+    {
+      assert(desc.samples(i).count() <= 1000000)
+    }
     // Execute first query
     // Executor.execute_Q1(desc, session, List("3"))
   }     

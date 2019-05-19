@@ -23,8 +23,8 @@ object Main {
     val rootLogger = Logger.getRootLogger()
     rootLogger.setLevel(Level.ERROR)
 
-    val inputFile="../dblp_10K.csv"
-    val numAnchors = 100
+    val inputFile="../dblp_small.csv"
+    val numAnchors = 4
     val distanceThreshold = 2
     val attrIndex = 0    
         
@@ -47,15 +47,6 @@ object Main {
     val startTime = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").format(LocalDateTime.now)
     println(startTime)
 
-    // cartesian
-    println("cartesian")
-    val t1Cartesian = System.nanoTime
-    val cartesian = rdd.map(x => x(attrIndex)).cartesian(rdd.map(x => x(attrIndex)))
-      .filter(x => x._1.toString != x._2.toString && editDistance(x._1.toString, x._2.toString) <= distanceThreshold)
-
-    println(cartesian.count())
-    val t2Cartesian = System.nanoTime
-    println((t2Cartesian-t1Cartesian)/ Math.pow(10,9))
     
     //Similarity join
     println("similarity join")
@@ -68,6 +59,16 @@ object Main {
     val t2 = System.nanoTime
 
     println((t2-t1)/ Math.pow(10,9))
+
+    // cartesian
+    println("cartesian")
+    val t1Cartesian = System.nanoTime
+    val cartesian = rdd.map(x => x(attrIndex)).cartesian(rdd.map(x => x(attrIndex)))
+      .filter(x => x._1.toString != x._2.toString && editDistance(x._1.toString, x._2.toString) <= distanceThreshold)
+
+    println(cartesian.count())
+    val t2Cartesian = System.nanoTime
+    println((t2Cartesian-t1Cartesian)/ Math.pow(10,9))
 
   }     
 }
