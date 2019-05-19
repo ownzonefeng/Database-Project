@@ -28,7 +28,6 @@ object Main {
 
     val desc = new Description
     desc.lineitem = session.read.parquet("/Users/wentao/Downloads/tpch_parquet_sf1/lineitem.parquet/*.parquet")
-    println(desc.lineitem.columns.toList)
     desc.customer = session.read.parquet("/Users/wentao/Downloads/tpch_parquet_sf1/customer.parquet/*.parquet")
     desc.orders = session.read.parquet("/Users/wentao/Downloads/tpch_parquet_sf1/order.parquet/*.parquet")
     desc.supplier = session.read.parquet("/Users/wentao/Downloads/tpch_parquet_sf1/supplier.parquet/*.parquet")
@@ -39,7 +38,7 @@ object Main {
     desc.e = 0.1
     desc.ci = 0.95
 
-    //val tmp = Sampler.sample(table, 1000000, desc.e, desc.ci)
+    val tmp = Sampler.sample(desc.lineitem, 1000000, desc.e, desc.ci)
     //desc.samples = tmp._1
     //desc.sampleDescription = tmp._2
 
