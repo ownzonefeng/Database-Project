@@ -24,7 +24,7 @@ object Main {
     rootLogger.setLevel(Level.ERROR)
 
     val inputFile="../dblp_small.csv"
-    val numAnchors = 4
+    val numAnchors = 16
     val distanceThreshold = 2
     val attrIndex = 0    
         

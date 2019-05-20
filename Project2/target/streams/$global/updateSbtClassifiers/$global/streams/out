@@ -1929,9 +1929,9 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#test-interface;1.0!test-interface.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#apply-macro;0.13.15!apply-macro.jar
 [debug] 	[NOT REQUIRED] org.scala-sbt#template-resolver;0.1!template-resolver.jar
-[debug] :: resolution report :: resolve 784ms :: artifacts dl 23ms
+[debug] :: resolution report :: resolve 683ms :: artifacts dl 25ms
 [debug] 	report for cs422-project2#cs422-project2$sbt_2.10;0.1.0 default produced in /Users/wentao/Documents/GitHub/Database-Project/Project2/target/resolution-cache/reports/cs422-project2-cs422-project2$sbt_2.10-default.xml
-[debug] 	resolve done (784ms resolve - 23ms download)
+[debug] 	resolve done (683ms resolve - 25ms download)
 [debug] Using inline dependencies specified in Scala.
 [debug] :: resolving dependencies :: cs422-project2#cs422-project2$sources_2.10;0.1.0
 [debug] 	confs: [default]
@@ -2665,6 +2665,6 @@
 [debug] 	[NOT REQUIRED] org.scala-sbt#incremental-compiler;0.13.15!incremental-compiler.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#logic;0.13.15!logic.jar(src)
 [debug] 	[NOT REQUIRED] org.scala-sbt#main-settings;0.13.15!main-settings.jar(src)
-[debug] :: resolution report :: resolve 171ms :: artifacts dl 17ms
+[debug] :: resolution report :: resolve 132ms :: artifacts dl 18ms
 [debug] 	report for cs422-project2#cs422-project2$sources_2.10;0.1.0 default produced in /Users/wentao/Documents/GitHub/Database-Project/Project2/target/resolution-cache/reports/cs422-project2-cs422-project2$sources_2.10-default.xml
-[debug] 	resolve done (171ms resolve - 17ms download)
+[debug] 	resolve done (132ms resolve - 18ms download)
